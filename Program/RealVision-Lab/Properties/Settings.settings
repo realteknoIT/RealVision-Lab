@@ -1,0 +1,81 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RealVisionLab.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Cam" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0,3</Value>
+    </Setting>
+    <Setting Name="Rect" Type="System.String" Scope="User">
+      <Value Profile="(Default)">734,586,487,315,0,0,0,0,95,False,Referans/607,300,75,75,10,5000,0,2,170,False,Bulunamadı/1289,300,78,75,10,5000,0,2,170,False,Bulunamadı/953,8,85,112,0,50,0,0,128,False,Piston/734,586,487,315,0,15000,0,11,95,False,ReferansCizgisi/576,680,150,180,190,198,0,12,73,True,SolKolUzunluk/1276,680,150,180,190,198,0,12,70,True,SağKolUzunluk/607,550,100,100,85,90,0,15,70,True,SolAçı/1290,550,100,100,85,90,0,16,70,True,SağAçı</Value>
+    </Setting>
+    <Setting Name="CamSetting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0*403*0*0*0*0*-3</Value>
+    </Setting>
+    <Setting Name="userPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1903</Value>
+    </Setting>
+    <Setting Name="productName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RealVisionLab - Görüntü İşleme</Value>
+    </Setting>
+    <Setting Name="Printer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Bekleme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2000-1000-1000-1000-1000-1000-750-50-2000</Value>
+    </Setting>
+    <Setting Name="Lamba" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Piston" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="Kase" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="bosBit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="PlcEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">192.168.000.000</Value>
+    </Setting>
+    <Setting Name="PRack" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PSlot" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="PlcFonk" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0,0,0,0,2</Value>
+    </Setting>
+    <Setting Name="Uart" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3-3</Value>
+    </Setting>
+    <Setting Name="QrFind" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="adminMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UartEnable" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="baud" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">115200</Value>
+    </Setting>
+    <Setting Name="plc_lamba" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="plc_piston" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="plc_kase" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="plc_bos" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

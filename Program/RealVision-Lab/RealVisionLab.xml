@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RealVisionLab</name>
+    </assembly>
+    <members>
+        <member name="F:RealVisionLab.MainPage.components">
+             <summary>
+            Gerekli tasarımcı değişkeni.
+             </summary>
+        </member>
+        <member name="M:RealVisionLab.MainPage.Dispose(System.Boolean)">
+             <summary>
+            Kullanılan tüm kaynakları temizleyin.
+             </summary>
+            <param name="disposing">yönetilen kaynaklar dispose edilmeliyse doğru; aksi halde yanlış.</param>
+        </member>
+        <member name="M:RealVisionLab.MainPage.InitializeComponent">
+             <summary>
+             Tasarımcı desteği için gerekli metot - bu metodun 
+            içeriğini kod düzenleyici ile değiştirmeyin.
+             </summary>
+        </member>
+        <member name="F:RealVisionLab.Message.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:RealVisionLab.Message.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:RealVisionLab.Message.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:RealVisionLab.PasswordForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:RealVisionLab.PasswordForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:RealVisionLab.PasswordForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:RealVisionLab.Program.Main">
+            <summary>
+            Uygulamanın ana girdi noktası.
+            </summary>
+        </member>
+        <member name="F:RealVisionLab.Property.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:RealVisionLab.Property.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:RealVisionLab.Property.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:RealVisionLab.Properties.Resources">
+            <summary>
+              Yerelleştirilmiş dizeleri aramak gibi işlemler için, türü kesin olarak belirtilmiş kaynak sınıfı.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.ResourceManager">
+            <summary>
+              Bu sınıf tarafından kullanılan, önbelleğe alınmış ResourceManager örneğini döndürür.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.Culture">
+            <summary>
+              Tümü için geçerli iş parçacığının CurrentUICulture özelliğini geçersiz kular
+              CurrentUICulture özelliğini tüm kaynak aramaları için geçersiz kılar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.add">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.carpi">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.del">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.foto_964">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.marturpolmar_logo">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.ok">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.realtekno_logo">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+        <member name="P:RealVisionLab.Properties.Resources.tik">
+            <summary>
+              System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+            </summary>
+        </member>
+    </members>
+</doc>
