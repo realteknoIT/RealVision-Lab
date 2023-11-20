@@ -114,7 +114,7 @@
             this.lbl_webSite.Name = "lbl_webSite";
             this.lbl_webSite.Size = new System.Drawing.Size(209, 29);
             this.lbl_webSite.TabIndex = 1;
-            this.lbl_webSite.Text = "www.realtekno.com";
+            this.lbl_webSite.Text = "www.realtekno.coms";
             this.lbl_webSite.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_webSite.Click += new System.EventHandler(this.Close_Click);
             // 
