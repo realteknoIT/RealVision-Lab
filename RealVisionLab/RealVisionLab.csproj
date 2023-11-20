@@ -26,6 +26,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\server\MyGULTEKIN\Projeler\RealVisionLab-15_11_23\Program\Setup\</InstallUrl>
+    <UpdateUrl>https://github.com/realteknoIT/RealVision-Lab/tree/master/Program/Setup/</UpdateUrl>
     <SupportUrl>http://www.realtekno.com</SupportUrl>
     <TargetCulture>tr-TR</TargetCulture>
     <ProductName>RealVisionLab</ProductName>
