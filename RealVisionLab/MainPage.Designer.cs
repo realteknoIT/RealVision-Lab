@@ -1,4 +1,6 @@
-﻿namespace RealVisionLab
+﻿using System.Drawing;
+
+namespace RealVisionLab
 {
     partial class MainPage
     {
@@ -47,6 +49,7 @@
             this.pb_realteknoLogo = new System.Windows.Forms.PictureBox();
             this.lbl_islemTime = new System.Windows.Forms.Label();
             this.txt_qr = new System.Windows.Forms.Label();
+            this.qrGelen = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.p_scene.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_scene)).BeginInit();
@@ -114,7 +117,7 @@
             this.lbl_webSite.Name = "lbl_webSite";
             this.lbl_webSite.Size = new System.Drawing.Size(209, 29);
             this.lbl_webSite.TabIndex = 1;
-            this.lbl_webSite.Text = "www.realtekno.coms";
+            this.lbl_webSite.Text = "www.realtekno.com";
             this.lbl_webSite.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_webSite.Click += new System.EventHandler(this.Close_Click);
             // 
@@ -165,10 +168,6 @@
             this.Reset_setting.TabIndex = 20;
             this.Reset_setting.Text = "AyarSıfırlama";
             this.Reset_setting.Click += new System.EventHandler(this.Reset_setting_Click);
-            // 
-            // Uart_to_IO
-            // 
-            this.Uart_to_IO.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.Uart_to_IO_DataReceived);
             // 
             // port_text
             // 
@@ -243,19 +242,29 @@
             // 
             // txt_qr
             // 
-            this.txt_qr.AutoSize = true;
             this.txt_qr.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.txt_qr.Location = new System.Drawing.Point(634, 981);
+            this.txt_qr.Location = new System.Drawing.Point(8, 962);
             this.txt_qr.Name = "txt_qr";
-            this.txt_qr.Size = new System.Drawing.Size(26, 13);
+            this.txt_qr.Size = new System.Drawing.Size(1261, 13);
             this.txt_qr.TabIndex = 26;
             this.txt_qr.Text = "QR:";
+            // 
+            // qrGelen
+            // 
+            this.qrGelen.Location = new System.Drawing.Point(390, 110);
+            this.qrGelen.Multiline = true;
+            this.qrGelen.Name = "qrGelen";
+            this.qrGelen.Size = new System.Drawing.Size(500, 30);
+            this.qrGelen.TabIndex = 500;
+            this.qrGelen.Visible = false;
+            this.qrGelen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.qrGelen_Enter);
             // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 1024);
+            this.Controls.Add(this.qrGelen);
             this.Controls.Add(this.txt_qr);
             this.Controls.Add(this.lbl_islemTime);
             this.Controls.Add(this.tx_debug);
@@ -304,6 +313,7 @@
         public System.IO.Ports.SerialPort Uart_to_IO;
         private System.Windows.Forms.Label lbl_islemTime;
         private System.Windows.Forms.Label txt_qr;
+        private System.Windows.Forms.TextBox qrGelen;
     }
 }
 

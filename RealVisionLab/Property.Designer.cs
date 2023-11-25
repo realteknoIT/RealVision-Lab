@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem136 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "",
             "",
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem137 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem138 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem139 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem140 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem141 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem142 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem143 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem144 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem145 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem146 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem147 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem148 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem149 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem150 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("");
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.lbl_banner = new System.Windows.Forms.Label();
@@ -97,6 +97,30 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_QrFind = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.nud_Wait11 = new System.Windows.Forms.NumericUpDown();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.nud_Wait10 = new System.Windows.Forms.NumericUpDown();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.nud_Wait9 = new System.Windows.Forms.NumericUpDown();
             this.btn_bekleme = new System.Windows.Forms.Button();
@@ -147,14 +171,10 @@
             this.lbl_txtPath = new System.Windows.Forms.Label();
             this.btn_txtDosyaAc = new System.Windows.Forms.Button();
             this.TabControlSag = new System.Windows.Forms.TabControl();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.nud_btn = new System.Windows.Forms.NumericUpDown();
+            this.label42 = new System.Windows.Forms.Label();
+            this.nud_plc_btn = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.SizeChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_rtLogo)).BeginInit();
             this.tab_plc.SuspendLayout();
@@ -174,6 +194,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Lamba)).BeginInit();
             this.tab_genel.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Wait11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Wait10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Wait9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Wait8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Wait1)).BeginInit();
@@ -191,6 +213,8 @@
             this.sonTarama.SuspendLayout();
             this.tumTarama.SuspendLayout();
             this.TabControlSag.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_plc_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -269,7 +293,7 @@
             this.btn_addCam.BackgroundImage = global::RealVisionLab.Properties.Resources.add;
             this.btn_addCam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_addCam.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_addCam.Font = new System.Drawing.Font("Harlow Solid Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btn_addCam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_addCam.ForeColor = System.Drawing.Color.White;
             this.btn_addCam.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_addCam.Location = new System.Drawing.Point(540, 35);
@@ -323,7 +347,7 @@
             this.button2.BackColor = System.Drawing.Color.Green;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Harlow Solid Italic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.Location = new System.Drawing.Point(457, 202);
@@ -347,6 +371,8 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label42);
+            this.panel3.Controls.Add(this.nud_plc_btn);
             this.panel3.Controls.Add(this.chb_plc_enable);
             this.panel3.Controls.Add(this.btn_plc_disconnect);
             this.panel3.Controls.Add(this.panel5);
@@ -380,9 +406,9 @@
             // 
             this.btn_plc_disconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_plc_disconnect.ForeColor = System.Drawing.Color.Red;
-            this.btn_plc_disconnect.Location = new System.Drawing.Point(363, 29);
+            this.btn_plc_disconnect.Location = new System.Drawing.Point(451, 29);
             this.btn_plc_disconnect.Name = "btn_plc_disconnect";
-            this.btn_plc_disconnect.Size = new System.Drawing.Size(174, 23);
+            this.btn_plc_disconnect.Size = new System.Drawing.Size(86, 23);
             this.btn_plc_disconnect.TabIndex = 14;
             this.btn_plc_disconnect.Text = "Bağlantıyı Kes";
             this.btn_plc_disconnect.UseVisualStyleBackColor = true;
@@ -542,6 +568,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label41);
+            this.panel4.Controls.Add(this.nud_btn);
             this.panel4.Controls.Add(this.txt_uart_baud);
             this.panel4.Controls.Add(this.chb_uart_enable);
             this.panel4.Controls.Add(this.panel6);
@@ -727,6 +755,22 @@
             // 
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.label39);
+            this.panel7.Controls.Add(this.label40);
+            this.panel7.Controls.Add(this.nud_Wait11);
+            this.panel7.Controls.Add(this.label38);
+            this.panel7.Controls.Add(this.label37);
+            this.panel7.Controls.Add(this.label36);
+            this.panel7.Controls.Add(this.label35);
+            this.panel7.Controls.Add(this.label34);
+            this.panel7.Controls.Add(this.label33);
+            this.panel7.Controls.Add(this.label32);
+            this.panel7.Controls.Add(this.label31);
+            this.panel7.Controls.Add(this.label30);
+            this.panel7.Controls.Add(this.label29);
+            this.panel7.Controls.Add(this.label28);
+            this.panel7.Controls.Add(this.label27);
+            this.panel7.Controls.Add(this.nud_Wait10);
             this.panel7.Controls.Add(this.label26);
             this.panel7.Controls.Add(this.label25);
             this.panel7.Controls.Add(this.label24);
@@ -748,8 +792,240 @@
             this.panel7.Controls.Add(this.nud_Wait4);
             this.panel7.Location = new System.Drawing.Point(0, 82);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(553, 69);
+            this.panel7.Size = new System.Drawing.Size(553, 126);
             this.panel7.TabIndex = 196;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(457, 94);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(20, 13);
+            this.label39.TabIndex = 216;
+            this.label39.Text = "ms";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(400, 71);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(49, 13);
+            this.label40.TabIndex = 215;
+            this.label40.Text = "Reseting";
+            // 
+            // nud_Wait11
+            // 
+            this.nud_Wait11.Location = new System.Drawing.Point(406, 87);
+            this.nud_Wait11.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_Wait11.Name = "nud_Wait11";
+            this.nud_Wait11.Size = new System.Drawing.Size(45, 20);
+            this.nud_Wait11.TabIndex = 214;
+            this.nud_Wait11.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(382, 94);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(18, 13);
+            this.label38.TabIndex = 206;
+            this.label38.Text = "sn";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(309, 94);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(20, 13);
+            this.label37.TabIndex = 213;
+            this.label37.Text = "ms";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(228, 94);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(20, 13);
+            this.label36.TabIndex = 206;
+            this.label36.Text = "ms";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(141, 94);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(20, 13);
+            this.label35.TabIndex = 212;
+            this.label35.Text = "ms";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(53, 94);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(20, 13);
+            this.label34.TabIndex = 206;
+            this.label34.Text = "ms";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(524, 52);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(20, 13);
+            this.label33.TabIndex = 211;
+            this.label33.Text = "ms";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(416, 51);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(20, 13);
+            this.label32.TabIndex = 210;
+            this.label32.Text = "ms";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(295, 51);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(20, 13);
+            this.label31.TabIndex = 209;
+            this.label31.Text = "ms";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(174, 51);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(20, 13);
+            this.label30.TabIndex = 208;
+            this.label30.Text = "ms";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(53, 47);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(20, 13);
+            this.label29.TabIndex = 205;
+            this.label29.Text = "ms";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(252, 71);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(43, 13);
+            this.label28.TabIndex = 207;
+            this.label28.Text = "IsReset";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(334, 71);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(40, 13);
+            this.label27.TabIndex = 206;
+            this.label27.Text = "QrWait";
+            // 
+            // nud_Wait10
+            // 
+            this.nud_Wait10.Location = new System.Drawing.Point(335, 87);
+            this.nud_Wait10.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nud_Wait10.Name = "nud_Wait10";
+            this.nud_Wait10.Size = new System.Drawing.Size(45, 20);
+            this.nud_Wait10.TabIndex = 205;
+            this.nud_Wait10.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(166, 71);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(56, 13);
+            this.label26.TabIndex = 204;
+            this.label26.Text = "IsTrueEnd";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(92, 71);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 13);
+            this.label25.TabIndex = 203;
+            this.label25.Text = "OkStamp";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(2, 70);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 13);
+            this.label24.TabIndex = 202;
+            this.label24.Text = "IsTrueStart";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(481, 28);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 201;
+            this.label23.Text = "ScanEnd";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(374, 20);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 26);
+            this.label21.TabIndex = 200;
+            this.label21.Text = "AltUzat\r\nAudi\r\n";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(241, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.TabIndex = 199;
+            this.label7.Text = "ScanStart";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(124, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 198;
+            this.label6.Text = "Capture";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(-1, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 197;
+            this.label5.Text = "TimerStop";
             // 
             // label22
             // 
@@ -765,7 +1041,7 @@
             // 
             // nud_Wait9
             // 
-            this.nud_Wait9.Location = new System.Drawing.Point(461, 45);
+            this.nud_Wait9.Location = new System.Drawing.Point(258, 87);
             this.nud_Wait9.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -786,7 +1062,7 @@
             this.btn_bekleme.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_bekleme.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btn_bekleme.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_bekleme.Location = new System.Drawing.Point(518, 45);
+            this.btn_bekleme.Location = new System.Drawing.Point(518, 102);
             this.btn_bekleme.Name = "btn_bekleme";
             this.btn_bekleme.Size = new System.Drawing.Size(26, 19);
             this.btn_bekleme.TabIndex = 176;
@@ -796,7 +1072,7 @@
             // 
             // nud_Wait8
             // 
-            this.nud_Wait8.Location = new System.Drawing.Point(404, 45);
+            this.nud_Wait8.Location = new System.Drawing.Point(177, 87);
             this.nud_Wait8.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -813,7 +1089,7 @@
             // 
             // nud_Wait1
             // 
-            this.nud_Wait1.Location = new System.Drawing.Point(5, 44);
+            this.nud_Wait1.Location = new System.Drawing.Point(2, 44);
             this.nud_Wait1.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -830,7 +1106,7 @@
             // 
             // nud_Wait7
             // 
-            this.nud_Wait7.Location = new System.Drawing.Point(347, 45);
+            this.nud_Wait7.Location = new System.Drawing.Point(90, 87);
             this.nud_Wait7.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -847,7 +1123,7 @@
             // 
             // nud_Wait2
             // 
-            this.nud_Wait2.Location = new System.Drawing.Point(62, 44);
+            this.nud_Wait2.Location = new System.Drawing.Point(123, 44);
             this.nud_Wait2.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -864,7 +1140,7 @@
             // 
             // nud_Wait6
             // 
-            this.nud_Wait6.Location = new System.Drawing.Point(290, 45);
+            this.nud_Wait6.Location = new System.Drawing.Point(5, 87);
             this.nud_Wait6.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -881,7 +1157,7 @@
             // 
             // nud_Wait3
             // 
-            this.nud_Wait3.Location = new System.Drawing.Point(119, 44);
+            this.nud_Wait3.Location = new System.Drawing.Point(244, 44);
             this.nud_Wait3.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -898,7 +1174,7 @@
             // 
             // nud_Wait5
             // 
-            this.nud_Wait5.Location = new System.Drawing.Point(233, 45);
+            this.nud_Wait5.Location = new System.Drawing.Point(473, 44);
             this.nud_Wait5.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -915,7 +1191,7 @@
             // 
             // nud_Wait4
             // 
-            this.nud_Wait4.Location = new System.Drawing.Point(176, 45);
+            this.nud_Wait4.Location = new System.Drawing.Point(365, 45);
             this.nud_Wait4.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -1153,37 +1429,37 @@
             this.txb_report.GridLines = true;
             this.txb_report.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.txb_report.HideSelection = false;
-            listViewItem136.StateImageIndex = 0;
-            listViewItem137.StateImageIndex = 0;
-            listViewItem138.StateImageIndex = 0;
-            listViewItem139.StateImageIndex = 0;
-            listViewItem140.StateImageIndex = 0;
-            listViewItem141.StateImageIndex = 0;
-            listViewItem142.StateImageIndex = 0;
-            listViewItem143.StateImageIndex = 0;
-            listViewItem144.StateImageIndex = 0;
-            listViewItem145.StateImageIndex = 0;
-            listViewItem146.StateImageIndex = 0;
-            listViewItem147.StateImageIndex = 0;
-            listViewItem148.StateImageIndex = 0;
-            listViewItem149.StateImageIndex = 0;
-            listViewItem150.StateImageIndex = 0;
+            listViewItem1.StateImageIndex = 0;
+            listViewItem2.StateImageIndex = 0;
+            listViewItem3.StateImageIndex = 0;
+            listViewItem4.StateImageIndex = 0;
+            listViewItem5.StateImageIndex = 0;
+            listViewItem6.StateImageIndex = 0;
+            listViewItem7.StateImageIndex = 0;
+            listViewItem8.StateImageIndex = 0;
+            listViewItem9.StateImageIndex = 0;
+            listViewItem10.StateImageIndex = 0;
+            listViewItem11.StateImageIndex = 0;
+            listViewItem12.StateImageIndex = 0;
+            listViewItem13.StateImageIndex = 0;
+            listViewItem14.StateImageIndex = 0;
+            listViewItem15.StateImageIndex = 0;
             this.txb_report.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem136,
-            listViewItem137,
-            listViewItem138,
-            listViewItem139,
-            listViewItem140,
-            listViewItem141,
-            listViewItem142,
-            listViewItem143,
-            listViewItem144,
-            listViewItem145,
-            listViewItem146,
-            listViewItem147,
-            listViewItem148,
-            listViewItem149,
-            listViewItem150});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5,
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10,
+            listViewItem11,
+            listViewItem12,
+            listViewItem13,
+            listViewItem14,
+            listViewItem15});
             this.txb_report.Location = new System.Drawing.Point(0, 0);
             this.txb_report.Name = "txb_report";
             this.txb_report.Size = new System.Drawing.Size(542, 429);
@@ -1320,77 +1596,39 @@
             this.TabControlSag.TabIndex = 164;
             this.TabControlSag.SelectedIndexChanged += new System.EventHandler(this.TabControlSag_SelectedIndexChanged);
             // 
-            // label5
+            // label41
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(-1, 28);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 197;
-            this.label5.Text = "TimerStop";
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(301, 32);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(35, 13);
+            this.label41.TabIndex = 25;
+            this.label41.Text = "Buton";
             // 
-            // label6
+            // nud_btn
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 198;
-            this.label6.Text = "Capture";
+            this.nud_btn.Location = new System.Drawing.Point(345, 29);
+            this.nud_btn.Name = "nud_btn";
+            this.nud_btn.Size = new System.Drawing.Size(49, 20);
+            this.nud_btn.TabIndex = 24;
+            this.nud_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label7
+            // label42
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(115, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
-            this.label7.TabIndex = 199;
-            this.label7.Text = "ScanStart";
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(298, 34);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(35, 13);
+            this.label42.TabIndex = 25;
+            this.label42.Text = "Buton";
             // 
-            // label21
+            // nud_plc_btn
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(175, 20);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(41, 26);
-            this.label21.TabIndex = 200;
-            this.label21.Text = "AltUzat\r\nAudi\r\n";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(230, 29);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
-            this.label23.TabIndex = 201;
-            this.label23.Text = "ScanEnd";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(287, 28);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 13);
-            this.label24.TabIndex = 202;
-            this.label24.Text = "IsTrueStart";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(344, 28);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 13);
-            this.label25.TabIndex = 203;
-            this.label25.Text = "OkStamp";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(395, 28);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(56, 13);
-            this.label26.TabIndex = 204;
-            this.label26.Text = "IsTrueEnd";
+            this.nud_plc_btn.Location = new System.Drawing.Point(342, 31);
+            this.nud_plc_btn.Name = "nud_plc_btn";
+            this.nud_plc_btn.Size = new System.Drawing.Size(49, 20);
+            this.nud_plc_btn.TabIndex = 24;
+            this.nud_plc_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Property
             // 
@@ -1439,6 +1677,8 @@
             this.tab_genel.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Wait11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Wait10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Wait9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Wait8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Wait1)).EndInit();
@@ -1459,6 +1699,8 @@
             this.tumTarama.ResumeLayout(false);
             this.tumTarama.PerformLayout();
             this.TabControlSag.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nud_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_plc_btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1572,5 +1814,25 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.NumericUpDown nud_Wait10;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.NumericUpDown nud_Wait11;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.NumericUpDown nud_plc_btn;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.NumericUpDown nud_btn;
     }
 }

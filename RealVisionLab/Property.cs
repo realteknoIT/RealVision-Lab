@@ -61,7 +61,8 @@ namespace RealVisionLab
             "RDikeyAciOlcme",
             "ikiOlcumArasıFark",
             "QrOku",
-            "ButonBekle"
+            "ButonBekle",
+            "HariciQrOku"
         };
         int index = 0;
         bool visib = false, adminMode = false;
@@ -87,6 +88,8 @@ namespace RealVisionLab
             nud_Wait7.Value = beklee[6];
             nud_Wait8.Value = beklee[7];
             nud_Wait9.Value = beklee[8];
+            nud_Wait10.Value = beklee[9];
+            nud_Wait11.Value = beklee[10];
             nud_Lamba.Value = Settings.Default.Lamba + 1;
             nud_Kase.Value = Settings.Default.Kase + 1;
             nud_Piston.Value = Settings.Default.Piston + 1;
@@ -1272,6 +1275,10 @@ namespace RealVisionLab
             nud_plc_kase.Value = Settings.Default.plc_kase;
             nud_plc_ok_bit.Value = Settings.Default.plc_bos;
 
+            nud_plc_btn.Value = Settings.Default.plc_buton;
+
+            nud_btn.Value = Settings.Default.buton;
+
             nud_Lamba.Value = Settings.Default.Lamba;
             nud_Piston.Value = Settings.Default.Piston;
             nud_Kase.Value = Settings.Default.Kase;
@@ -1383,6 +1390,9 @@ namespace RealVisionLab
             Settings.Default.Piston = (int)nud_Piston.Value;
             Settings.Default.Kase = (int)nud_Kase.Value;
             Settings.Default.bosBit = (int)nud_bosBit.Value;
+
+            Settings.Default.buton = (int)nud_btn.Value;
+            Settings.Default.plc_buton = (int)nud_plc_btn.Value;
 
             Settings.Default.Save();
         }
@@ -1581,7 +1591,7 @@ namespace RealVisionLab
 
         private void btn_bekleme_Click(object sender, EventArgs e)
         {
-            string beklemeci = nud_Wait1.Value + "-" + nud_Wait2.Value + "-" + nud_Wait3.Value + "-" + nud_Wait4.Value + "-" + nud_Wait5.Value + "-" + nud_Wait6.Value + "-" + nud_Wait7.Value + "-" + nud_Wait8.Value + "-" + nud_Wait9.Value;
+            string beklemeci = nud_Wait1.Value + "-" + nud_Wait2.Value + "-" + nud_Wait3.Value + "-" + nud_Wait4.Value + "-" + nud_Wait5.Value + "-" + nud_Wait6.Value + "-" + nud_Wait7.Value + "-" + nud_Wait8.Value + "-" + nud_Wait9.Value + "-" + nud_Wait10.Value + "-" + nud_Wait11.Value;
             Settings.Default.Bekleme = beklemeci;
             Settings.Default.Save();
         }
