@@ -402,6 +402,9 @@ namespace RealVisionLab
         {
             try
             {
+                qrGelen.Visible = false;
+                qrGelen.Text = "";
+
                 string[] rectString = Settings.Default.Rect.Split('/');
                 buton = false;
                 capturing = true;
@@ -442,7 +445,7 @@ namespace RealVisionLab
                 }
 
                 timer.Start();
-                await Task.Delay(1500);
+                await Task.Delay(int.Parse(Settings.Default.Bekleme.Split('-')[10]));
                 lbl_alarm.Text = "HAZIR";
                 lbl_alarm.ForeColor = org;
                 p_scene.BackColor = org;
@@ -466,6 +469,7 @@ namespace RealVisionLab
                         if (portscount > 0)
                         {
                             port_text.Text = "Çıkış Cihazı Bağlanamadı";
+                            Uart_to_IO.DataReceived -= Uart_to_IO_DataReceived;
                             port_text.ForeColor = red;
                             lbl_alarm.Text = "Bağlanıyor...";
                             lbl_alarm.ForeColor = org;
@@ -511,6 +515,7 @@ namespace RealVisionLab
                             {
                                 Uart_to_IO.Write(new byte[] { 0x00 }, 0, 1);
                                 port_text.Text = "Çıkış Cihazı Bağlandı";
+                                Uart_to_IO.DataReceived += Uart_to_IO_DataReceived;
                                 port_text.ForeColor = grn;
                             }
                             Thread.Sleep(1000); // İstenilen süre boyunca bekleyin (örneğin 100 ms)
@@ -671,6 +676,7 @@ namespace RealVisionLab
         {
             try
             {
+                if(qrGelen.Visible) { qrGelen.Visible = false; }
                 if (buton)
                 {
                     buton = false;
@@ -713,6 +719,7 @@ namespace RealVisionLab
                     {
                         uartCount++;
                         port_text.Text = "Çıkış Cihazı Bağlanamadı (UART)";
+                        Uart_to_IO.DataReceived -= Uart_to_IO_DataReceived;
                         port_text.ForeColor = red;
                     }
                     else
@@ -738,7 +745,7 @@ namespace RealVisionLab
                     {
                         uartCount = 0;
                         byte[] controlPLC = new byte[1];
-                        result = client.DBRead(1, 0, 1, controlPLC); buton = S7.GetBitAt(controlPLC, 0, 0);
+                        result = client.DBRead(1, 0, 1, controlPLC); buton = S7.GetBitAt(controlPLC, 0, Settings.Default.plc_buton);
 
                     }
 
@@ -769,6 +776,7 @@ namespace RealVisionLab
                 bool isTrue = false;
                 string[] bekleme = Settings.Default.Bekleme.Split('-');
                 rectString = Settings.Default.Rect.Split('/');
+
                 if (Uart_to_IO.IsOpen)
                 {
                     bitArray[Settings.Default.Lamba] = true;
@@ -793,6 +801,7 @@ namespace RealVisionLab
                     //    return;
 
                 } // Piston-Lamba => 1 ve 2 çıkış
+
                 await Task.Delay(int.Parse(bekleme[0]));
 
                 timer.Stop();
@@ -904,6 +913,8 @@ namespace RealVisionLab
                                             Qr_Okuyucu(bmp[i], i, c);
                                         else if (islem_id == 19)
                                             Btn_bekle(bmp[i], i, c);
+                                        else if (islem_id == 20)
+                                            Qr_Oku_harici(bmp[i], i, c);
 
                                     }
                                     else hata[c, i] = false;
@@ -965,6 +976,8 @@ namespace RealVisionLab
                                         Qr_Okuyucu(bmp[i], i, c);
                                     else if (islem_id == 19)
                                         Btn_bekle(bmp[i], i, c);
+                                    else if (islem_id == 20)
+                                        Qr_Oku_harici(bmp[i], i, c);
                                 }
                             });
                             pbox[i].Image = bmp[i];
@@ -972,7 +985,7 @@ namespace RealVisionLab
                             pbox[i].Visible = false;
                             string time;
                             if ((DateTime.Now - startTime).TotalMilliseconds.ToString().Split(',').Length > 1)
-                                time = (DateTime.Now - startTime).TotalMilliseconds.ToString().Split(',')[0] + "." + (DateTime.Now - startTime).TotalMilliseconds.ToString().Split(',')[1];
+                                time = (DateTime.Now - startTime).TotalMilliseconds.ToString().Split(',')[0];
                             else
                                 time = (DateTime.Now - startTime).TotalMilliseconds.ToString().Split(',')[0];
                             lbl_islemTime.Text = Property.list[islem_id] + "( " + time + " ms)";
@@ -1011,10 +1024,7 @@ namespace RealVisionLab
                                     g.DrawImage(Resources.carpi, (Rect[i].X + (Rect[i].Width - 75) / 2), (Rect[i].Y + (Rect[i].Height - 75) / 2), 75, 75);
                                     lbl_alarm.Text += rectString[i].Split(',')[10] + " - ";
                                     lbl_alarm.ForeColor = red;
-                                    if (!bool.Parse(rectString[i].Split(',')[9]))
-                                    {
-                                        reseting = true;
-                                    }
+                                    reseting = !bool.Parse(rectString[i].Split(',')[9]);
 
                                 }
                             }
@@ -1023,24 +1033,14 @@ namespace RealVisionLab
                             if (reseting)
                             {
                                 await Task.Delay(int.Parse(bekleme[8]));
-                                if (Settings.Default.UartEnable && Uart_to_IO.IsOpen)
-                                {
-                                    bitArray[Settings.Default.Lamba] = true;
-                                    bitArray[Settings.Default.Piston] = true;
-                                    bitArray[Settings.Default.Kase] = true;
-                                    bitArray[Settings.Default.bosBit] = true;
-                                    Uart_to_IO.Write(new byte[] { ConvertToByte(bitArray) }, 0, 1);
-                                } // Piston-Lamba-Kaşe => 1, 2, ve 4 çıkış
-                                await Task.Delay(int.Parse(bekleme[6]));
                                 Reset();
                             }
                             else
                             {
-                                Program.mainPage.Focus();
                                 islem = false;
+                                c = cam.Length;
                             }
 
-                            break;
                         }
                     }
                 }
@@ -1999,12 +1999,12 @@ namespace RealVisionLab
             string find_text = rectString[r_n].Split(',')[10];
             if (result != null)
             {
-                hata[c_n, r_n] = result.Text.Contains(find_text.Split('\"')[0]) ? false : true;
-                txt_qr.Text = "QR: " + result.Text + " " + find_text.Split('\"')[0];
+                hata[c_n, r_n] = result.Text.Contains(find_text.Split('-')[1]) ? false : true;
+                txt_qr.Text = "QR: " + result.Text + " " + find_text.Split('-')[1];
             }
             else
             {
-                txt_qr.Text = "QR: okunamadı " + find_text.Split('\"')[0];
+                txt_qr.Text = "QR: okunamadı " + find_text.Split('-')[1];
                 hata[c_n, r_n] = true;
             }
 
@@ -2064,6 +2064,43 @@ namespace RealVisionLab
                     buton = true;
                 }
             }
+        }
+        //20-
+        private void Qr_Oku_harici(Bitmap bitmap, int r_n, int c_n)
+        {
+            txt_qr.Text = "";
+            lbl_alarm.Text = "BEKLENİYOR...";
+            lbl_alarm.ForeColor = org;
+            if (client.Connected)
+            {
+                byte[] controlPLC = new byte[1];
+                S7.SetBitAt(controlPLC, 0, Settings.Default.plc_lamba, true); //Lamba
+                S7.SetBitAt(controlPLC, 0, Settings.Default.plc_piston, true); //Piston
+                S7.SetBitAt(controlPLC, 0, Settings.Default.plc_bos, true); //Lazer
+                result = client.DBWrite(1, 0, 1, controlPLC);
+
+                if (result != 0)
+                    port_text.Text = client.ErrorText(result);
+            }
+
+            int qrCounter = 0;
+            int qrErCount = 0;
+            string gelen = "";
+            string find_text = rectString[r_n].Split(',')[10];
+            
+            while(qrCounter < (int.Parse(Settings.Default.Bekleme.Split('-')[9]) * 10))
+            {
+                capture = true;
+                gelen = txt_qr.Text;
+                if (gelen.Contains(find_text.Split('-')[1])) break;
+                qrCounter++;
+                if(gelen != "") { qrErCount++; }
+                if (qrErCount > 20) { hata[c_n, r_n] = true; break; }
+                Thread.Sleep(100);
+                Application.DoEvents();
+                
+            }
+            txt_qr.Text = "";
         }
 
         // Tarama Fonksiyonları Bitiş ------------------------------------------------------------------------------
@@ -2217,7 +2254,7 @@ namespace RealVisionLab
                     {
                         boolDizisi[i] = (receiveDec & (1 << i)) != 0; // her biti bool olarak ayır
                     }
-                    if (boolDizisi[1] && !islem)
+                    if (boolDizisi[Settings.Default.buton] && !islem)
                     {
                         Uart_to_IO.DiscardInBuffer();
                         Uart_to_IO.DiscardOutBuffer();
@@ -2242,8 +2279,10 @@ namespace RealVisionLab
         }
         private void password_KeyDown(object sender, KeyEventArgs e)
         {
+            if (txt_qr.Text.Length > 75) txt_qr.Text = "QR:";
             if (e.KeyCode == Keys.Enter)
             {
+                txt_qr.Text = "QR:";
                 if (!islem)
                 {
                     PasswordForm pasw = new PasswordForm
@@ -2260,6 +2299,31 @@ namespace RealVisionLab
                     pasw.Show();
                 }
 
+            }
+            else
+            {
+                txt_qr.Text += ((char)e.KeyValue);
+            }
+        }
+        bool qrExtern = false;
+        private void qrGelen_Enter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                qrExtern = true;
+                    PasswordForm pasw = new PasswordForm
+                    {
+                        Owner = this
+                    };
+                    pasw.FormClosed += (s, args) =>
+                    {
+                        if (pasw.isTrue)
+                        {
+                            qrExtern = false;
+                            Reset();
+                        }
+                    };
+                    pasw.Show();
             }
         }
 

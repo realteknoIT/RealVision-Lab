@@ -12,7 +12,7 @@ namespace RealVisionLab.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.8.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,7 +37,8 @@ namespace RealVisionLab.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"734,586,487,315,0,0,0,0,95,False,Referans/607,300,75,75,10,5000,0,2,170,False,Bulunamadı/1289,300,78,75,10,5000,0,2,170,False,Bulunamadı/953,8,85,112,0,50,0,0,128,False,Piston/734,586,487,315,0,15000,0,11,95,False,ReferansCizgisi/576,680,150,180,190,198,0,12,73,True,SolKolUzunluk/1276,680,150,180,190,198,0,12,70,True,SağKolUzunluk/607,550,100,100,85,90,0,15,70,True,SolAçı/1290,550,100,100,85,90,0,16,70,True,SağAçı")]
+        [global::System.Configuration.DefaultSettingValueAttribute("734,586,487,315,0,0,0,0,95,False,Referans/607,300,75,75,10,5000,0,2,170,False,Bul" +
+            "unamadı")]
         public string Rect {
             get {
                 return ((string)(this["Rect"]));
@@ -97,7 +98,7 @@ namespace RealVisionLab.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2000-1000-1000-1000-1000-1000-750-50-2000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000-1000-1000-1000-1000-1000-750-50-2000-2000-1000")]
         public string Bekleme {
             get {
                 return ((string)(this["Bekleme"]));
@@ -320,6 +321,30 @@ namespace RealVisionLab.Properties {
             }
             set {
                 this["plc_bos"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int buton {
+            get {
+                return ((int)(this["buton"]));
+            }
+            set {
+                this["buton"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int plc_buton {
+            get {
+                return ((int)(this["plc_buton"]));
+            }
+            set {
+                this["plc_buton"] = value;
             }
         }
     }
