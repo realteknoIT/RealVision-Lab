@@ -1,8 +1,10 @@
-﻿using AForge.Video;
+﻿using AForge.Imaging.Filters;
+using AForge.Video;
 using AForge.Video.DirectShow;
 using RealVisionLab.Properties;
 using Sharp7;
 using System;
+using System.Data.Common;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -58,9 +60,11 @@ namespace RealVisionLab
         public static bool
             capture = false,
             buton = false,
+            rst_buton = false,
             alarm = false,
             capturing = true,
             islem = false,
+            gThrs = false,
             qr = false,
             uartResetAlreadyOpened = false;
         public static bool[]
@@ -77,6 +81,8 @@ namespace RealVisionLab
             tarama_count = 0,
             caming_id = 0,
             result = 1,
+            gthresint = 128,
+            renk = 0,
             newFileIndex,
             uartCount = 0;
         public static int[]
@@ -643,7 +649,16 @@ namespace RealVisionLab
                 if (capture && sender == cam[caming_id])
                 {
                     pb_scene.Image?.Dispose();
-                    pb_scene.Image = (Bitmap)e.Frame.Clone();
+                    Bitmap bmp = new Bitmap((Bitmap)e.Frame.Clone());
+
+                    if (gThrs)
+                    {
+                        Threshold_Apply(bmp, gthresint, renk);
+                    }
+                    else
+                    {
+                        pb_scene.Image = bmp;
+                    }
                     capture = false;
                 }
 
@@ -676,6 +691,13 @@ namespace RealVisionLab
         {
             try
             {
+                txt_qr2.Text = "Reset:" + rst_buton + " - start:" + buton ;
+                if (rst_buton)
+                {
+                    rst_buton = false;
+                    Reset();
+                }
+
                 if(qrGelen.Visible) { qrGelen.Visible = false; }
                 if (buton)
                 {
@@ -770,8 +792,10 @@ namespace RealVisionLab
             int[] yon_no = new int[2];
             yon_no[0] = 0;
             yon_no[1] = 0;
+            for(int t = 0; t < 8; t++) { bitArray[t] = false; }
             try
             {
+                lbl_alarm.Text = "İşlem Başladı.";
                 Bitmap[] bitmap = new Bitmap[cam.Length];
                 bool isTrue = false;
                 string[] bekleme = Settings.Default.Bekleme.Split('-');
@@ -821,7 +845,9 @@ namespace RealVisionLab
                             bitmap[c] = new Bitmap(pb_scene.Image);
                         }
                         catch (Exception) { }
-                    } while (bitmap[c] == null);
+                    } 
+                    while 
+                    (bitmap[c] == null);
                     await Task.Delay(int.Parse(bekleme[2]));
 
                     lbl_islemTime.Text = "Tarama Başladı." + "( " + (DateTime.Now - startTime).TotalMilliseconds + " ms)";
@@ -1149,6 +1175,7 @@ namespace RealVisionLab
             catch (Exception exception)
             {
                 tx_debug.Text = exception.ToString();
+                txt_qr.Text = "!" + exception.ToString();
                 timer.Start();
                 Reset();
             }
@@ -2150,29 +2177,91 @@ namespace RealVisionLab
 
             return new PointF(c2X, c2Y);
         }
-        public void Threshold_Apply(Bitmap orjbitmap, int threshold)
+        public void Threshold_Apply(Bitmap orjbitmaps, int threshold, int renk)
         {
-            Bitmap bitmap = new Bitmap(orjbitmap);
 
-            for (int x = 0; x < bitmap.Width; x++)
+                // Orijinal bitmap'i yeni bir bitmap'e kopyala
+                Bitmap bitmap = new Bitmap(orjbitmaps);
+
+
+
+                // Bitmap'in boyutlarını al
+                int width = bitmap.Width;
+                int height = bitmap.Height;
+
+            BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
+
+            int bytesPerPixel = Bitmap.GetPixelFormatSize(bitmap.PixelFormat) / 8;
+            int byteCount = bitmapData.Stride * bitmap.Height;
+            byte[] pixels = new byte[byteCount];
+            IntPtr ptrFirstPixel = bitmapData.Scan0;
+            Marshal.Copy(ptrFirstPixel, pixels, 0, pixels.Length);
+
+            byte thresholdValue = (byte)threshold;
+
+            for (int i = 0; i < pixels.Length; i += bytesPerPixel)
             {
-                for (int y = 0; y < bitmap.Height; y++)
+                if (renk == 0)
                 {
-                    Color c = bitmap.GetPixel(x, y);
+                    byte gray = (byte)((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3);
+                    byte color = (gray < thresholdValue) ? (byte)0 : (byte)255;
 
-                    if ((c.R + c.G + c.B) / 3 < threshold) c = blk;
-                    else c = wht;
+                    pixels[i] = color;
+                    pixels[i + 1] = color;
+                    pixels[i + 2] = color;
+                }
+                else if (renk == 1)
+                {
+                    if (pixels[i + 1] > ((pixels[i] + pixels[i + 2]) / 2) + 25)
+                    {
+                        pixels[i] = 0;
+                        pixels[i + 1] = 255;
+                        pixels[i + 2] = 0;
 
-                    bitmap.SetPixel(x, y, c);
+                    }
+                    else
+                    {
+                        byte gray = (byte)((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3);
+                        byte color = (gray < thresholdValue) ? (byte)0 : (byte)255;
+
+                        pixels[i] = color;
+                        pixels[i + 1] = color;
+                        pixels[i + 2] = color;
+
+                    }
+
+                }
+                if (renk == 2)
+                {
+                    if (pixels[i + 2] > ((pixels[i + 1] + pixels[i]) / 2) + 25)
+                    {
+                        pixels[i] = 0;
+                        pixels[i + 1] = 0;
+                        pixels[i + 2] = 255;
+
+                    }
+                    else
+                    {
+                        byte gray = (byte)((pixels[i] + pixels[i + 1] + pixels[i + 2]) / 3);
+                        byte color = (gray < thresholdValue) ? (byte)0 : (byte)255;
+
+                        pixels[i] = color;
+                        pixels[i + 1] = color;
+                        pixels[i + 2] = color;
+
+                    }
                 }
             }
 
+            Marshal.Copy(pixels, 0, ptrFirstPixel, pixels.Length);
+            bitmap.UnlockBits(bitmapData);
+
             pb_scene.Image = bitmap;
-        }
+            }
 
-        // Pencere İle İlgili Olaylar Başlangıç ---------------------------------------------------------------------
+    // Pencere İle İlgili Olaylar Başlangıç ---------------------------------------------------------------------
 
-        bool Moved; int Mouse_X, Mouse_Y;
+    bool Moved; int Mouse_X, Mouse_Y;
         private void Move_MouseDown(object sender, MouseEventArgs e) { Mouse_X = e.X; Mouse_Y = e.Y; Moved = true; }
         private void Move_MouseMove(object sender, MouseEventArgs e) { if (Moved) SetDesktopLocation(MousePosition.X - Mouse_X, MousePosition.Y - Mouse_Y); }
         private void Move_MouseUp(object sender, MouseEventArgs e) { Moved = false; }
@@ -2246,7 +2335,10 @@ namespace RealVisionLab
                 {
                     int receiving = Uart_to_IO.BytesToRead;
                     string recieveText = Uart_to_IO.ReadExisting();
-                    int receiveDec = Convert.ToInt16(recieveText[0]);
+                    int receiveDec = Convert.ToByte(recieveText[0]);
+
+
+
 
                     bool[] boolDizisi = new bool[8];
 
@@ -2254,11 +2346,15 @@ namespace RealVisionLab
                     {
                         boolDizisi[i] = (receiveDec & (1 << i)) != 0; // her biti bool olarak ayır
                     }
+                    Uart_to_IO.DiscardInBuffer();
+                    Uart_to_IO.DiscardOutBuffer();
                     if (boolDizisi[Settings.Default.buton] && !islem)
                     {
-                        Uart_to_IO.DiscardInBuffer();
-                        Uart_to_IO.DiscardOutBuffer();
                         buton = true;
+                    }
+                    if (boolDizisi[Settings.Default.reset_buton])
+                    {
+                        rst_buton = true;
                     }
                     if (Application.OpenForms.OfType<Property>().Any())
                     {

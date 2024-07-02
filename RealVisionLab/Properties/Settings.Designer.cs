@@ -347,5 +347,17 @@ namespace RealVisionLab.Properties {
                 this["plc_buton"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int reset_buton {
+            get {
+                return ((int)(this["reset_buton"]));
+            }
+            set {
+                this["reset_buton"] = value;
+            }
+        }
     }
 }

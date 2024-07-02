@@ -1,0 +1,20 @@
+17.05.2024 16:10:31 - Hata Kodu: System.IndexOutOfRangeException: Dizin, dizi sınırlarının dışındaydı.
+   konum: RealVisionLab.MainPage.Cam_adjust()
+
+17.05.2024 16:10:36 - Hata Kodu: System.ArgumentOutOfRangeException: InvalidArgument='0' değeri 'SelectedIndex' için geçerli değil.
+Parametre adı: SelectedIndex
+   konum: System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   konum: RealVisionLab.Property.Cam_cmboxAdjust()
+   konum: RealVisionLab.Property.Panel_ayarla()
+   konum: RealVisionLab.Property..ctor(Int32 tabindex)
+   konum: RealVisionLab.MainPage.Pb_companyLogo_Click(Object sender, EventArgs e)
+25.05.2024 09:42:08 - Hata Kodu: System.IndexOutOfRangeException: Dizin, dizi sınırlarının dışındaydı.
+   konum: RealVisionLab.MainPage.Cam_adjust()
+
+25.05.2024 09:42:10 - Hata Kodu: System.ArgumentOutOfRangeException: InvalidArgument='0' değeri 'SelectedIndex' için geçerli değil.
+Parametre adı: SelectedIndex
+   konum: System.Windows.Forms.ComboBox.set_SelectedIndex(Int32 value)
+   konum: RealVisionLab.Property.Cam_cmboxAdjust()
+   konum: RealVisionLab.Property.Panel_ayarla()
+   konum: RealVisionLab.Property..ctor(Int32 tabindex)
+   konum: RealVisionLab.MainPage.Pb_companyLogo_Click(Object sender, EventArgs e)

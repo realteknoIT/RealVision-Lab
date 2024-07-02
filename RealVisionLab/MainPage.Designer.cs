@@ -50,6 +50,7 @@ namespace RealVisionLab
             this.lbl_islemTime = new System.Windows.Forms.Label();
             this.txt_qr = new System.Windows.Forms.Label();
             this.qrGelen = new System.Windows.Forms.TextBox();
+            this.txt_qr2 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.p_scene.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_scene)).BeginInit();
@@ -245,7 +246,7 @@ namespace RealVisionLab
             this.txt_qr.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.txt_qr.Location = new System.Drawing.Point(8, 962);
             this.txt_qr.Name = "txt_qr";
-            this.txt_qr.Size = new System.Drawing.Size(1261, 13);
+            this.txt_qr.Size = new System.Drawing.Size(628, 13);
             this.txt_qr.TabIndex = 26;
             this.txt_qr.Text = "QR:";
             // 
@@ -259,11 +260,21 @@ namespace RealVisionLab
             this.qrGelen.Visible = false;
             this.qrGelen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.qrGelen_Enter);
             // 
+            // txt_qr2
+            // 
+            this.txt_qr2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.txt_qr2.Location = new System.Drawing.Point(768, 962);
+            this.txt_qr2.Name = "txt_qr2";
+            this.txt_qr2.Size = new System.Drawing.Size(500, 13);
+            this.txt_qr2.TabIndex = 501;
+            this.txt_qr2.Text = "QR:";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 1024);
+            this.Controls.Add(this.txt_qr2);
             this.Controls.Add(this.qrGelen);
             this.Controls.Add(this.txt_qr);
             this.Controls.Add(this.lbl_islemTime);
@@ -314,6 +325,7 @@ namespace RealVisionLab
         private System.Windows.Forms.Label lbl_islemTime;
         private System.Windows.Forms.Label txt_qr;
         private System.Windows.Forms.TextBox qrGelen;
+        private System.Windows.Forms.Label txt_qr2;
     }
 }
 

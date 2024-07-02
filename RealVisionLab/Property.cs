@@ -73,7 +73,7 @@ namespace RealVisionLab
             int[] beklee = Settings.Default.Bekleme.Split('-').Select(int.Parse).ToArray();
             InitializeComponent();
             adminMode = Settings.Default.adminMode;
-            if(debugMode) { adminMode = true; }
+            if (debugMode) { adminMode = true; }
             Panel_ayarla();
             tab_index = tabindex;
             tabControl.SelectedIndex = tabindex;
@@ -1242,6 +1242,7 @@ namespace RealVisionLab
                 cmbCam[a].SelectedIndexChanged += new EventHandler(Value_changed);
                 cmbRes[a].SelectedIndexChanged += new EventHandler(Value_changed);
             }
+            nd_threshold.Value = MainPage.gthresint;
             Program.mainPage.visibility_set(tabControl.SelectedIndex);
             MainPage.caming_id = tabControl.SelectedIndex;
             SizeChange.Height = Height - 80;
@@ -1266,7 +1267,7 @@ namespace RealVisionLab
             string[] ports = SerialPort.GetPortNames();
             int portscount = ports.Length;
             chb_uart_enable.Checked = Settings.Default.UartEnable;
-            if (portscount < 0) txt_uart_com.Text = ports[portscount - 1]; else txt_uart_com.Text = "PortYok";
+            if (portscount > 0) txt_uart_com.Text = ports[portscount - 1]; else txt_uart_com.Text = "PortYok";
             txt_uart_baud.Text = Settings.Default.baud.ToString();
 
 
@@ -1278,6 +1279,7 @@ namespace RealVisionLab
             nud_plc_btn.Value = Settings.Default.plc_buton;
 
             nud_btn.Value = Settings.Default.buton;
+            nud_rst_btn.Value = Settings.Default.reset_buton;
 
             nud_Lamba.Value = Settings.Default.Lamba;
             nud_Piston.Value = Settings.Default.Piston;
@@ -1355,15 +1357,7 @@ namespace RealVisionLab
             Program.mainPage.Label_adjust(MainPage.org);
         }
 
-        Bitmap orjbitmap;
 
-        private void btn_thresApp_Click(object sender, EventArgs e)
-        {
-            if (orjbitmap != null)
-            {
-                Program.mainPage.Threshold_Apply(orjbitmap, (int)nd_threshold.Value);
-            }
-        }
 
 
         private void txt_QrFind_TextChanged(object sender, EventArgs e)
@@ -1392,9 +1386,36 @@ namespace RealVisionLab
             Settings.Default.bosBit = (int)nud_bosBit.Value;
 
             Settings.Default.buton = (int)nud_btn.Value;
+            Settings.Default.reset_buton = (int)nud_rst_btn.Value;
             Settings.Default.plc_buton = (int)nud_plc_btn.Value;
 
             Settings.Default.Save();
+        }
+
+        private void nd_threshold_ValueChanged(object sender, EventArgs e)
+        {
+            MainPage.gthresint = (int)nd_threshold.Value;
+        }
+
+
+
+        private void btn_colorChange_Click(object sender, EventArgs e)
+        {
+            if (btn_colorChange.BackColor == Color.Black)
+            {
+                MainPage.renk = 1;
+                btn_colorChange.BackColor = Color.Green;
+            }
+            else if (btn_colorChange.BackColor == Color.Green)
+            {
+                MainPage.renk = 2;
+                btn_colorChange.BackColor = Color.Red;
+            }
+            else if (btn_colorChange.BackColor == Color.Red)
+            {
+                MainPage.renk = 0;
+                btn_colorChange.BackColor = Color.Black;
+            }
         }
 
         bool push = false;
@@ -1404,13 +1425,12 @@ namespace RealVisionLab
             if (push)
             {
                 btn_foto.Text = "Durdur";
-                Program.mainPage.timer.Stop();
-                orjbitmap = new Bitmap(Program.mainPage.pb_scene.Image);
+                MainPage.gThrs = true;
             }
             else
             {
                 btn_foto.Text = "Başlat";
-                Program.mainPage.timer.Start();
+                MainPage.gThrs = false;
             }
         }
 
@@ -1418,7 +1438,7 @@ namespace RealVisionLab
         {
             try
             {
-                if (txt_send.Text == "realtekno")
+                if (txt_send.Text == "realtekno" || txt_send.Text == "2580")
                 {
                     //enable işlemi
                     Settings.Default.adminMode = true;
@@ -1506,7 +1526,7 @@ namespace RealVisionLab
             {
                 try
                 {
-                    if (txt_send.Text == "realtekno")
+                    if (txt_send.Text == "realtekno" || txt_send.Text == "2580")
                     {
                         //enable işlemi
                         Settings.Default.adminMode = true;

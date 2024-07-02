@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealVisionLab.exe" size="2894808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealVisionLab.exe" size="2896856">
       <assemblyIdentity name="RealVisionLab" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>r0cK775Ac5CssXblQHHA+2JmHVS58NRabp9emAD73wI=</dsig:DigestValue>
+        <dsig:DigestValue>PzQT4Z0tKqmsRZSoDcUmz4RhXvAYex1liExXALy2Vg0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -183,13 +183,13 @@
       <dsig:DigestValue>Yuvu9y/QTLOuoY51IE3vXKi2EMFFUltxE7Zn0lu+xS8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="RealVisionLab.exe.config" size="3697">
+  <file name="RealVisionLab.exe.config" size="3800">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EKXiBxI9M7vJMB8IcONrH+8wmmlY99LTLKp62GANrPU=</dsig:DigestValue>
+      <dsig:DigestValue>WEctMtX8on40x0TYjD+ydKqA1SFByK9Mw/idcVaef9g=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\ok.png" size="1843">

@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "",
             "",
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem11 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem12 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem13 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem14 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.lbl_banner = new System.Windows.Forms.Label();
@@ -58,9 +58,12 @@
             this.SizeChange = new System.Windows.Forms.PictureBox();
             this.pb_rtLogo = new System.Windows.Forms.PictureBox();
             this.tab_plc = new System.Windows.Forms.TabPage();
+            this.label44 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.plc_tabControl = new System.Windows.Forms.TabControl();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.nud_plc_btn = new System.Windows.Forms.NumericUpDown();
             this.chb_plc_enable = new System.Windows.Forms.CheckBox();
             this.btn_plc_disconnect = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -79,6 +82,10 @@
             this.nud_plc_rack = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label43 = new System.Windows.Forms.Label();
+            this.nud_rst_btn = new System.Windows.Forms.NumericUpDown();
+            this.label41 = new System.Windows.Forms.Label();
+            this.nud_btn = new System.Windows.Forms.NumericUpDown();
             this.txt_uart_baud = new System.Windows.Forms.TextBox();
             this.chb_uart_enable = new System.Windows.Forms.CheckBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -140,7 +147,6 @@
             this.txt_send = new System.Windows.Forms.TextBox();
             this.txt_recData = new System.Windows.Forms.TextBox();
             this.btn_foto = new System.Windows.Forms.Button();
-            this.btn_thresApp = new System.Windows.Forms.Button();
             this.nd_threshold = new System.Windows.Forms.NumericUpDown();
             this.lbl_proName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -171,14 +177,12 @@
             this.lbl_txtPath = new System.Windows.Forms.Label();
             this.btn_txtDosyaAc = new System.Windows.Forms.Button();
             this.TabControlSag = new System.Windows.Forms.TabControl();
-            this.label41 = new System.Windows.Forms.Label();
-            this.nud_btn = new System.Windows.Forms.NumericUpDown();
-            this.label42 = new System.Windows.Forms.Label();
-            this.nud_plc_btn = new System.Windows.Forms.NumericUpDown();
+            this.btn_colorChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SizeChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_rtLogo)).BeginInit();
             this.tab_plc.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_plc_btn)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_plc_ok_bit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_plc_kase)).BeginInit();
@@ -187,6 +191,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_plc_slot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_plc_rack)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_rst_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_btn)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_bosBit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Kase)).BeginInit();
@@ -213,8 +219,6 @@
             this.sonTarama.SuspendLayout();
             this.tumTarama.SuspendLayout();
             this.TabControlSag.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_plc_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -330,6 +334,7 @@
             // 
             // tab_plc
             // 
+            this.tab_plc.Controls.Add(this.label44);
             this.tab_plc.Controls.Add(this.button2);
             this.tab_plc.Controls.Add(this.plc_tabControl);
             this.tab_plc.Controls.Add(this.panel3);
@@ -341,6 +346,17 @@
             this.tab_plc.TabIndex = 3;
             this.tab_plc.Text = "PLC Ayarları";
             this.tab_plc.UseVisualStyleBackColor = true;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.ForeColor = System.Drawing.Color.Red;
+            this.label44.Location = new System.Drawing.Point(7, 202);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(405, 13);
+            this.label44.TabIndex = 166;
+            this.label44.Text = "Uart yada PLC ayarlarında değişiklik yapıldığında kaydet butonuna basmak gereklid" +
+    "ir.";
             // 
             // button2
             // 
@@ -386,6 +402,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(541, 95);
             this.panel3.TabIndex = 24;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(298, 34);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(35, 13);
+            this.label42.TabIndex = 25;
+            this.label42.Text = "Buton";
+            // 
+            // nud_plc_btn
+            // 
+            this.nud_plc_btn.Location = new System.Drawing.Point(342, 31);
+            this.nud_plc_btn.Name = "nud_plc_btn";
+            this.nud_plc_btn.Size = new System.Drawing.Size(49, 20);
+            this.nud_plc_btn.TabIndex = 24;
+            this.nud_plc_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chb_plc_enable
             // 
@@ -568,6 +601,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label43);
+            this.panel4.Controls.Add(this.nud_rst_btn);
             this.panel4.Controls.Add(this.label41);
             this.panel4.Controls.Add(this.nud_btn);
             this.panel4.Controls.Add(this.txt_uart_baud);
@@ -580,6 +615,40 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(541, 95);
             this.panel4.TabIndex = 25;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(395, 37);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(35, 13);
+            this.label43.TabIndex = 27;
+            this.label43.Text = "Buton";
+            // 
+            // nud_rst_btn
+            // 
+            this.nud_rst_btn.Location = new System.Drawing.Point(439, 34);
+            this.nud_rst_btn.Name = "nud_rst_btn";
+            this.nud_rst_btn.Size = new System.Drawing.Size(49, 20);
+            this.nud_rst_btn.TabIndex = 26;
+            this.nud_rst_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(260, 34);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(35, 13);
+            this.label41.TabIndex = 25;
+            this.label41.Text = "Buton";
+            // 
+            // nud_btn
+            // 
+            this.nud_btn.Location = new System.Drawing.Point(304, 31);
+            this.nud_btn.Name = "nud_btn";
+            this.nud_btn.Size = new System.Drawing.Size(49, 20);
+            this.nud_btn.TabIndex = 24;
+            this.nud_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_uart_baud
             // 
@@ -714,13 +783,13 @@
             // 
             // tab_genel
             // 
+            this.tab_genel.Controls.Add(this.btn_colorChange);
             this.tab_genel.Controls.Add(this.label4);
             this.tab_genel.Controls.Add(this.txt_QrFind);
             this.tab_genel.Controls.Add(this.panel7);
             this.tab_genel.Controls.Add(this.txb_productName);
             this.tab_genel.Controls.Add(this.panel1);
             this.tab_genel.Controls.Add(this.btn_foto);
-            this.tab_genel.Controls.Add(this.btn_thresApp);
             this.tab_genel.Controls.Add(this.nd_threshold);
             this.tab_genel.Controls.Add(this.lbl_proName);
             this.tab_genel.Controls.Add(this.label1);
@@ -1279,23 +1348,13 @@
             // 
             // btn_foto
             // 
-            this.btn_foto.Location = new System.Drawing.Point(208, 54);
+            this.btn_foto.Location = new System.Drawing.Point(134, 55);
             this.btn_foto.Name = "btn_foto";
             this.btn_foto.Size = new System.Drawing.Size(61, 24);
             this.btn_foto.TabIndex = 168;
             this.btn_foto.Text = "Başlat";
             this.btn_foto.UseVisualStyleBackColor = true;
             this.btn_foto.Click += new System.EventHandler(this.btn_foto_Click);
-            // 
-            // btn_thresApp
-            // 
-            this.btn_thresApp.Location = new System.Drawing.Point(127, 54);
-            this.btn_thresApp.Name = "btn_thresApp";
-            this.btn_thresApp.Size = new System.Drawing.Size(75, 24);
-            this.btn_thresApp.TabIndex = 168;
-            this.btn_thresApp.Text = "Uygula";
-            this.btn_thresApp.UseVisualStyleBackColor = true;
-            this.btn_thresApp.Click += new System.EventHandler(this.btn_thresApp_Click);
             // 
             // nd_threshold
             // 
@@ -1314,6 +1373,7 @@
             0,
             0,
             0});
+            this.nd_threshold.ValueChanged += new System.EventHandler(this.nd_threshold_ValueChanged);
             // 
             // lbl_proName
             // 
@@ -1429,37 +1489,37 @@
             this.txb_report.GridLines = true;
             this.txb_report.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.txb_report.HideSelection = false;
-            listViewItem1.StateImageIndex = 0;
-            listViewItem2.StateImageIndex = 0;
-            listViewItem3.StateImageIndex = 0;
-            listViewItem4.StateImageIndex = 0;
-            listViewItem5.StateImageIndex = 0;
-            listViewItem6.StateImageIndex = 0;
-            listViewItem7.StateImageIndex = 0;
-            listViewItem8.StateImageIndex = 0;
-            listViewItem9.StateImageIndex = 0;
-            listViewItem10.StateImageIndex = 0;
-            listViewItem11.StateImageIndex = 0;
-            listViewItem12.StateImageIndex = 0;
-            listViewItem13.StateImageIndex = 0;
-            listViewItem14.StateImageIndex = 0;
-            listViewItem15.StateImageIndex = 0;
+            listViewItem16.StateImageIndex = 0;
+            listViewItem17.StateImageIndex = 0;
+            listViewItem18.StateImageIndex = 0;
+            listViewItem19.StateImageIndex = 0;
+            listViewItem20.StateImageIndex = 0;
+            listViewItem21.StateImageIndex = 0;
+            listViewItem22.StateImageIndex = 0;
+            listViewItem23.StateImageIndex = 0;
+            listViewItem24.StateImageIndex = 0;
+            listViewItem25.StateImageIndex = 0;
+            listViewItem26.StateImageIndex = 0;
+            listViewItem27.StateImageIndex = 0;
+            listViewItem28.StateImageIndex = 0;
+            listViewItem29.StateImageIndex = 0;
+            listViewItem30.StateImageIndex = 0;
             this.txb_report.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10,
-            listViewItem11,
-            listViewItem12,
-            listViewItem13,
-            listViewItem14,
-            listViewItem15});
+            listViewItem16,
+            listViewItem17,
+            listViewItem18,
+            listViewItem19,
+            listViewItem20,
+            listViewItem21,
+            listViewItem22,
+            listViewItem23,
+            listViewItem24,
+            listViewItem25,
+            listViewItem26,
+            listViewItem27,
+            listViewItem28,
+            listViewItem29,
+            listViewItem30});
             this.txb_report.Location = new System.Drawing.Point(0, 0);
             this.txb_report.Name = "txb_report";
             this.txb_report.Size = new System.Drawing.Size(542, 429);
@@ -1596,39 +1656,15 @@
             this.TabControlSag.TabIndex = 164;
             this.TabControlSag.SelectedIndexChanged += new System.EventHandler(this.TabControlSag_SelectedIndexChanged);
             // 
-            // label41
+            // btn_colorChange
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(301, 32);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(35, 13);
-            this.label41.TabIndex = 25;
-            this.label41.Text = "Buton";
-            // 
-            // nud_btn
-            // 
-            this.nud_btn.Location = new System.Drawing.Point(345, 29);
-            this.nud_btn.Name = "nud_btn";
-            this.nud_btn.Size = new System.Drawing.Size(49, 20);
-            this.nud_btn.TabIndex = 24;
-            this.nud_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(298, 34);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(35, 13);
-            this.label42.TabIndex = 25;
-            this.label42.Text = "Buton";
-            // 
-            // nud_plc_btn
-            // 
-            this.nud_plc_btn.Location = new System.Drawing.Point(342, 31);
-            this.nud_plc_btn.Name = "nud_plc_btn";
-            this.nud_plc_btn.Size = new System.Drawing.Size(49, 20);
-            this.nud_plc_btn.TabIndex = 24;
-            this.nud_plc_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_colorChange.BackColor = System.Drawing.Color.Black;
+            this.btn_colorChange.Location = new System.Drawing.Point(201, 55);
+            this.btn_colorChange.Name = "btn_colorChange";
+            this.btn_colorChange.Size = new System.Drawing.Size(64, 26);
+            this.btn_colorChange.TabIndex = 199;
+            this.btn_colorChange.UseVisualStyleBackColor = false;
+            this.btn_colorChange.Click += new System.EventHandler(this.btn_colorChange_Click);
             // 
             // Property
             // 
@@ -1655,8 +1691,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.SizeChange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_rtLogo)).EndInit();
             this.tab_plc.ResumeLayout(false);
+            this.tab_plc.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_plc_btn)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_plc_ok_bit)).EndInit();
@@ -1667,6 +1705,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_plc_rack)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_rst_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_btn)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_bosBit)).EndInit();
@@ -1699,8 +1739,6 @@
             this.tumTarama.ResumeLayout(false);
             this.tumTarama.PerformLayout();
             this.TabControlSag.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nud_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_plc_btn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1744,7 +1782,6 @@
         private System.Windows.Forms.TextBox txt_send;
         public System.Windows.Forms.TextBox txt_recData;
         private System.Windows.Forms.Button btn_foto;
-        private System.Windows.Forms.Button btn_thresApp;
         public System.Windows.Forms.NumericUpDown nd_threshold;
         private System.Windows.Forms.Label lbl_proName;
         private System.Windows.Forms.Label label1;
@@ -1834,5 +1871,9 @@
         private System.Windows.Forms.NumericUpDown nud_plc_btn;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.NumericUpDown nud_btn;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.NumericUpDown nud_rst_btn;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button btn_colorChange;
     }
 }
