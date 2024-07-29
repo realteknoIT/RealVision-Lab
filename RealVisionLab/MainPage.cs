@@ -33,16 +33,22 @@ namespace RealVisionLab
 
         public static S7Client
             client = null;
+
         public static VideoCaptureDevice[]
             cam;
+
         public static FilterInfoCollection
             devices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
         public static Label[]
            artcle;
+
         public static Label[,]
             lbl;
+
         public static PictureBox[]
             pbox;
+
         public static Color
             blk = Color.FromArgb(255, 0, 0, 0),
             wht = Color.FromArgb(255, 255, 255, 255),
@@ -51,6 +57,7 @@ namespace RealVisionLab
             org = Color.FromArgb(255, 255, 165, 0),
             grn = Color.FromArgb(255, 0, 255, 0),
             ylw = Color.FromArgb(255, 255, 255, 0);
+
         public static Bitmap[]
             bmp;
         public static Rectangle[]

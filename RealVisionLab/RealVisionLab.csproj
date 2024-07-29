@@ -228,7 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\app.manifest" />
-    <None Include="RealVisionLab_TemporaryKey.pfx" />
     <None Include="Resources\carpi.png" />
   </ItemGroup>
   <ItemGroup>
