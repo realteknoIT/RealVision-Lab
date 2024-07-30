@@ -18,3 +18,7 @@ Parametre adı: SelectedIndex
    konum: RealVisionLab.Property.Panel_ayarla()
    konum: RealVisionLab.Property..ctor(Int32 tabindex)
    konum: RealVisionLab.MainPage.Pb_companyLogo_Click(Object sender, EventArgs e)
+29.07.2024 16:10:30 - Hata Kodu: System.OutOfMemoryException: Bellek yetersiz.
+   konum: System.Drawing.Bitmap.Clone(Rectangle rect, PixelFormat format)
+   konum: RealVisionLab.MainPage.<Islemler>d__65.MoveNext()
+29.07.2024 16:12:15 - Hata Kodu: Load Error: Dizin, dizi sınırlarının dışındaydı.

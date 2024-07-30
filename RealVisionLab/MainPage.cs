@@ -1130,7 +1130,7 @@ namespace RealVisionLab
                             bitArray[Settings.Default.Kase] = true;
                             bitArray[Settings.Default.bosBit] = true;
                             Uart_to_IO.Write(new byte[] { ConvertToByte(bitArray) }, 0, 1);
-                        } // Piston-Lamba-Kaşe => 1, 2, ve 4 çıkış
+                        } // Piston-Lamba-Kaşe => 1, 2, 3 ve 4 çıkış
                         if (Settings.Default.PlcEnable && client != null)
                         {
                             if (client.Connected)

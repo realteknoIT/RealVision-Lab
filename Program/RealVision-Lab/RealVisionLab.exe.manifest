@@ -103,14 +103,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealVisionLab.exe" size="2896856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealVisionLab.exe" size="2895872">
       <assemblyIdentity name="RealVisionLab" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PzQT4Z0tKqmsRZSoDcUmz4RhXvAYex1liExXALy2Vg0=</dsig:DigestValue>
+        <dsig:DigestValue>4Ve8ZwqQEF79Ox/iJlihgOp0S7Uf/POM5c6fC8kt4RU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
