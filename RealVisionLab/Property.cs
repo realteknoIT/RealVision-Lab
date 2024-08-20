@@ -629,6 +629,10 @@ namespace RealVisionLab
                     {
                         Res_no[i] = 0;
                     }
+                    if(cmbRes[i].Items.Count <= 0)
+                    {
+                        cmbRes[i].Items.Add("Bulunamadı");
+                    }
 
                     cmbRes[i].SelectedIndex = Res_no[i];
 
@@ -704,6 +708,10 @@ namespace RealVisionLab
                     if (Res_no[i] >= cam[i].VideoCapabilities.Length)
                     {
                         Res_no[i] = cam[i].VideoCapabilities.Length - 1;
+                    }
+                    if (cmbRes[i].Items.Count <= 0)
+                    {
+                        cmbRes[i].Items.Add("Bulunamadı");
                     }
 
                     cmbRes[i].SelectedIndex = Res_no[i];

@@ -648,51 +648,50 @@ namespace RealVisionLab
                 tx_debug.Text = ex.ToString() + "\r\n";
             }
         }
-
+        Bitmap newFrame = null;
         private void New_Frame(object sender, NewFrameEventArgs e)
         {
             try
             {
                 if (capture && sender == cam[caming_id])
                 {
-                    pb_scene.Image?.Dispose();
-                    Bitmap bmp = new Bitmap((Bitmap)e.Frame.Clone());
+                    // Eski nesneleri serbest bırak
+                    if (pb_scene.Image != null)
+                    {
+                        pb_scene.Image.Dispose();
+                    }
 
-                    if (gThrs)
+                    if (newFrame != null)
                     {
-                        Threshold_Apply(bmp, gthresint, renk);
+                        newFrame.Dispose();
+                        newFrame = null;
                     }
-                    else
+
+                    // Yeni Bitmap nesnesini oluştur
+                    using (Bitmap tempFrame = (Bitmap)e.Frame.Clone())
                     {
-                        pb_scene.Image = bmp;
+                        newFrame = new Bitmap(tempFrame);
+
+                        if (gThrs)
+                        {
+                            // Threshold uygulaması
+                            Threshold_Apply(newFrame, gthresint, renk);
+                        }
+                        else
+                        {
+                            pb_scene.Image = (Bitmap)newFrame.Clone(); // Kopyalama yaparak referans sorunlarını önleyin
+                        }
                     }
+
                     capture = false;
                 }
-
-                //if (qr && sender == cam[caming_id])
-                //{
-                //    BarcodeReader barcodeReader = new BarcodeReader();
-                //    Result result = null;
-
-                //    while (result == null)
-                //    {
-                //        Bitmap bitmap = new Bitmap(pb_scene.Image);
-                //        result = await Task.Run(() => barcodeReader.Decode(bitmap));
-                //    }
-
-                //    if (result != null)
-                //    {
-                //        label1.Text = result.Text;
-                //        await Task.Delay(1000);
-                //         qr = false;
-                //    }
-                //}
             }
             catch (Exception ex)
             {
                 tx_debug.Text = ex.ToString() + "\r\n";
             }
         }
+
 
         private void Main_timer_Tick(object sender, EventArgs e)
         {
