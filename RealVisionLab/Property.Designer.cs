@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem31 = new System.Windows.Forms.ListViewItem(new string[] {
             "",
             "",
             "",
             "",
             ""}, -1);
-            System.Windows.Forms.ListViewItem listViewItem17 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem18 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem19 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem20 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem21 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem22 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem23 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem24 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem25 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem26 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem27 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem28 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem29 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.ListViewItem listViewItem30 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem32 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem33 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem34 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem35 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem36 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem37 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem38 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem39 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem40 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem41 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem42 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem43 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem44 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.ListViewItem listViewItem45 = new System.Windows.Forms.ListViewItem("");
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.lbl_banner = new System.Windows.Forms.Label();
@@ -101,6 +101,7 @@
             this.txt_uart_com = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tab_genel = new System.Windows.Forms.TabPage();
+            this.btn_colorChange = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_QrFind = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -177,7 +178,7 @@
             this.lbl_txtPath = new System.Windows.Forms.Label();
             this.btn_txtDosyaAc = new System.Windows.Forms.Button();
             this.TabControlSag = new System.Windows.Forms.TabControl();
-            this.btn_colorChange = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SizeChange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_rtLogo)).BeginInit();
             this.tab_plc.SuspendLayout();
@@ -802,6 +803,16 @@
             this.tab_genel.TabIndex = 2;
             this.tab_genel.Text = "Genel Ayarlar";
             this.tab_genel.UseVisualStyleBackColor = true;
+            // 
+            // btn_colorChange
+            // 
+            this.btn_colorChange.BackColor = System.Drawing.Color.Black;
+            this.btn_colorChange.Location = new System.Drawing.Point(201, 55);
+            this.btn_colorChange.Name = "btn_colorChange";
+            this.btn_colorChange.Size = new System.Drawing.Size(64, 26);
+            this.btn_colorChange.TabIndex = 199;
+            this.btn_colorChange.UseVisualStyleBackColor = false;
+            this.btn_colorChange.Click += new System.EventHandler(this.btn_colorChange_Click);
             // 
             // label4
             // 
@@ -1489,37 +1500,37 @@
             this.txb_report.GridLines = true;
             this.txb_report.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.txb_report.HideSelection = false;
-            listViewItem16.StateImageIndex = 0;
-            listViewItem17.StateImageIndex = 0;
-            listViewItem18.StateImageIndex = 0;
-            listViewItem19.StateImageIndex = 0;
-            listViewItem20.StateImageIndex = 0;
-            listViewItem21.StateImageIndex = 0;
-            listViewItem22.StateImageIndex = 0;
-            listViewItem23.StateImageIndex = 0;
-            listViewItem24.StateImageIndex = 0;
-            listViewItem25.StateImageIndex = 0;
-            listViewItem26.StateImageIndex = 0;
-            listViewItem27.StateImageIndex = 0;
-            listViewItem28.StateImageIndex = 0;
-            listViewItem29.StateImageIndex = 0;
-            listViewItem30.StateImageIndex = 0;
+            listViewItem31.StateImageIndex = 0;
+            listViewItem32.StateImageIndex = 0;
+            listViewItem33.StateImageIndex = 0;
+            listViewItem34.StateImageIndex = 0;
+            listViewItem35.StateImageIndex = 0;
+            listViewItem36.StateImageIndex = 0;
+            listViewItem37.StateImageIndex = 0;
+            listViewItem38.StateImageIndex = 0;
+            listViewItem39.StateImageIndex = 0;
+            listViewItem40.StateImageIndex = 0;
+            listViewItem41.StateImageIndex = 0;
+            listViewItem42.StateImageIndex = 0;
+            listViewItem43.StateImageIndex = 0;
+            listViewItem44.StateImageIndex = 0;
+            listViewItem45.StateImageIndex = 0;
             this.txb_report.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem16,
-            listViewItem17,
-            listViewItem18,
-            listViewItem19,
-            listViewItem20,
-            listViewItem21,
-            listViewItem22,
-            listViewItem23,
-            listViewItem24,
-            listViewItem25,
-            listViewItem26,
-            listViewItem27,
-            listViewItem28,
-            listViewItem29,
-            listViewItem30});
+            listViewItem31,
+            listViewItem32,
+            listViewItem33,
+            listViewItem34,
+            listViewItem35,
+            listViewItem36,
+            listViewItem37,
+            listViewItem38,
+            listViewItem39,
+            listViewItem40,
+            listViewItem41,
+            listViewItem42,
+            listViewItem43,
+            listViewItem44,
+            listViewItem45});
             this.txb_report.Location = new System.Drawing.Point(0, 0);
             this.txb_report.Name = "txb_report";
             this.txb_report.Size = new System.Drawing.Size(542, 429);
@@ -1656,21 +1667,21 @@
             this.TabControlSag.TabIndex = 164;
             this.TabControlSag.SelectedIndexChanged += new System.EventHandler(this.TabControlSag_SelectedIndexChanged);
             // 
-            // btn_colorChange
+            // button3
             // 
-            this.btn_colorChange.BackColor = System.Drawing.Color.Black;
-            this.btn_colorChange.Location = new System.Drawing.Point(201, 55);
-            this.btn_colorChange.Name = "btn_colorChange";
-            this.btn_colorChange.Size = new System.Drawing.Size(64, 26);
-            this.btn_colorChange.TabIndex = 199;
-            this.btn_colorChange.UseVisualStyleBackColor = false;
-            this.btn_colorChange.Click += new System.EventHandler(this.btn_colorChange_Click);
+            this.button3.Location = new System.Drawing.Point(437, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 165;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Property
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 530);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.TabControlSag);
             this.Controls.Add(this.btn_delCam);
             this.Controls.Add(this.btn_addCam);
@@ -1684,6 +1695,7 @@
             this.Name = "Property";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Properties";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Property_FormClosing);
             this.Load += new System.EventHandler(this.Property_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Move_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Move_MouseMove);
@@ -1875,5 +1887,6 @@
         private System.Windows.Forms.NumericUpDown nud_rst_btn;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Button btn_colorChange;
+        private System.Windows.Forms.Button button3;
     }
 }

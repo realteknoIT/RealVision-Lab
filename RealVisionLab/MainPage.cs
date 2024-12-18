@@ -1,6 +1,7 @@
 ﻿using AForge.Imaging.Filters;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using DirectShowLib;
 using RealVisionLab.Properties;
 using Sharp7;
 using System;
@@ -12,10 +13,16 @@ using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using ZXing;
+
+
+
+
 
 namespace RealVisionLab
 {
@@ -38,7 +45,7 @@ namespace RealVisionLab
             cam;
 
         public static FilterInfoCollection
-            devices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            devices = new FilterInfoCollection(AForge.Video.DirectShow.FilterCategory.VideoInputDevice);
 
         public static Label[]
            artcle;
@@ -119,16 +126,17 @@ namespace RealVisionLab
         {
             try
             {
-                if(debugMode)
+                if (debugMode)
                 {
                     this.WindowState = FormWindowState.Normal;
                 }
                 else
                 {
-                    this.WindowState= FormWindowState.Maximized;
+                    this.WindowState = FormWindowState.Maximized;
                 }
                 CheckForIllegalCrossThreadCalls = false;
                 InitializeComponent();
+                ApplyCameraSettingsToAll();
 
                 client = new S7Client();
 
@@ -697,14 +705,14 @@ namespace RealVisionLab
         {
             try
             {
-                txt_qr2.Text = "Reset:" + rst_buton + " - start:" + buton ;
+                txt_qr2.Text = "Reset:" + rst_buton + " - start:" + buton;
                 if (rst_buton)
                 {
                     rst_buton = false;
                     Reset();
                 }
 
-                if(qrGelen.Visible) { qrGelen.Visible = false; }
+                if (qrGelen.Visible) { qrGelen.Visible = false; }
                 if (buton)
                 {
                     buton = false;
@@ -798,7 +806,7 @@ namespace RealVisionLab
             int[] yon_no = new int[2];
             yon_no[0] = 0;
             yon_no[1] = 0;
-            for(int t = 0; t < 8; t++) { bitArray[t] = false; }
+            for (int t = 0; t < 8; t++) { bitArray[t] = false; }
             try
             {
                 lbl_alarm.Text = "İşlem Başladı.";
@@ -851,8 +859,8 @@ namespace RealVisionLab
                             bitmap[c] = new Bitmap(pb_scene.Image);
                         }
                         catch (Exception) { }
-                    } 
-                    while 
+                    }
+                    while
                     (bitmap[c] == null);
                     await Task.Delay(int.Parse(bekleme[2]));
 
@@ -1122,57 +1130,57 @@ namespace RealVisionLab
                     lbl_alarm.ForeColor = grn;
                     await Task.Delay(int.Parse(bekleme[5]));
 
-                        if (Settings.Default.UartEnable && Uart_to_IO.IsOpen)
+                    if (Settings.Default.UartEnable && Uart_to_IO.IsOpen)
+                    {
+                        bitArray[Settings.Default.Lamba] = true;
+                        bitArray[Settings.Default.Piston] = true;
+                        bitArray[Settings.Default.Kase] = true;
+                        bitArray[Settings.Default.bosBit] = true;
+                        Uart_to_IO.Write(new byte[] { ConvertToByte(bitArray) }, 0, 1);
+                    } // Piston-Lamba-Kaşe => 1, 2, 3 ve 4 çıkış
+                    if (Settings.Default.PlcEnable && client != null)
+                    {
+                        if (client.Connected)
                         {
-                            bitArray[Settings.Default.Lamba] = true;
-                            bitArray[Settings.Default.Piston] = true;
-                            bitArray[Settings.Default.Kase] = true;
-                            bitArray[Settings.Default.bosBit] = true;
-                            Uart_to_IO.Write(new byte[] { ConvertToByte(bitArray) }, 0, 1);
-                        } // Piston-Lamba-Kaşe => 1, 2, 3 ve 4 çıkış
-                        if (Settings.Default.PlcEnable && client != null)
-                        {
-                            if (client.Connected)
-                            {
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_lamba, true); //Lamba
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_bos, true); //Lamba
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_piston, true); //Piston
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_kase, true); //kaşe
-                                result = client.DBWrite(1, 0, 1, controlPlc);
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_lamba, true); //Lamba
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_bos, true); //Lamba
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_piston, true); //Piston
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_kase, true); //kaşe
+                            result = client.DBWrite(1, 0, 1, controlPlc);
 
-                                if (result != 0)
-                                    port_text.Text = client.ErrorText(result);
+                            if (result != 0)
+                                port_text.Text = client.ErrorText(result);
 
-                            }
                         }
-                        await Task.Delay(int.Parse(bekleme[6]));
-                        if (Settings.Default.UartEnable && Uart_to_IO.IsOpen)
+                    }
+                    await Task.Delay(int.Parse(bekleme[6]));
+                    if (Settings.Default.UartEnable && Uart_to_IO.IsOpen)
+                    {
+                        bitArray[Settings.Default.Lamba] = true;
+                        bitArray[Settings.Default.Piston] = true;
+                        bitArray[Settings.Default.Kase] = false;
+                        bitArray[Settings.Default.bosBit] = false;
+                        Uart_to_IO.Write(new byte[] { ConvertToByte(bitArray) }, 0, 1);
+                    }
+                    if (Settings.Default.PlcEnable && client != null)
+                    {
+                        if (client.Connected)
                         {
-                            bitArray[Settings.Default.Lamba] = true;
-                            bitArray[Settings.Default.Piston] = true;
-                            bitArray[Settings.Default.Kase] = false;
-                            bitArray[Settings.Default.bosBit] = false;
-                            Uart_to_IO.Write(new byte[] { ConvertToByte(bitArray) }, 0, 1);
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_lamba, true); //Lamba
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_bos, true); //Lamba
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_piston, true); //Piston
+                            S7.SetBitAt(controlPlc, 0, Settings.Default.plc_kase, false); //kaşe
+                            result = client.DBWrite(1, 0, 1, controlPlc);
+
+                            if (result != 0)
+                                port_text.Text = client.ErrorText(result);
+
+
                         }
-                        if (Settings.Default.PlcEnable && client != null)
-                        {
-                            if (client.Connected)
-                            {
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_lamba, true); //Lamba
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_bos, true); //Lamba
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_piston, true); //Piston
-                                S7.SetBitAt(controlPlc, 0, Settings.Default.plc_kase, false); //kaşe
-                                result = client.DBWrite(1, 0, 1, controlPlc);
-
-                                if (result != 0)
-                                    port_text.Text = client.ErrorText(result);
+                    }
 
 
-                            }
-                        }
 
-
-                    
                     await Task.Delay(int.Parse(bekleme[7]));
                     Reset();
                 }
@@ -2064,14 +2072,14 @@ namespace RealVisionLab
             for (int i = 0; i < Thrs[r_n] * 10; i++)
             {
                 bitmap = null;
-                
-                
-                    capture = true;
-                    try
-                    {
-                        bitmap = new Bitmap(pb_scene.Image);
-                    }
-                    catch (Exception) { }
+
+
+                capture = true;
+                try
+                {
+                    bitmap = new Bitmap(pb_scene.Image);
+                }
+                catch (Exception) { }
 
                 if (buton) i = Thrs[r_n] * 10;
                 Thread.Sleep(100);
@@ -2120,18 +2128,18 @@ namespace RealVisionLab
             int qrErCount = 0;
             string gelen = "";
             string find_text = rectString[r_n].Split(',')[10];
-            
-            while(qrCounter < (int.Parse(Settings.Default.Bekleme.Split('-')[9]) * 10))
+
+            while (qrCounter < (int.Parse(Settings.Default.Bekleme.Split('-')[9]) * 10))
             {
                 capture = true;
                 gelen = txt_qr.Text;
                 if (gelen.Contains(find_text.Split('-')[1])) break;
                 qrCounter++;
-                if(gelen != "") { qrErCount++; }
+                if (gelen != "") { qrErCount++; }
                 if (qrErCount > 20) { hata[c_n, r_n] = true; break; }
                 Thread.Sleep(100);
                 Application.DoEvents();
-                
+
             }
             txt_qr.Text = "";
         }
@@ -2186,14 +2194,14 @@ namespace RealVisionLab
         public void Threshold_Apply(Bitmap orjbitmaps, int threshold, int renk)
         {
 
-                // Orijinal bitmap'i yeni bir bitmap'e kopyala
-                Bitmap bitmap = new Bitmap(orjbitmaps);
+            // Orijinal bitmap'i yeni bir bitmap'e kopyala
+            Bitmap bitmap = new Bitmap(orjbitmaps);
 
 
 
-                // Bitmap'in boyutlarını al
-                int width = bitmap.Width;
-                int height = bitmap.Height;
+            // Bitmap'in boyutlarını al
+            int width = bitmap.Width;
+            int height = bitmap.Height;
 
             BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadWrite, bitmap.PixelFormat);
 
@@ -2263,11 +2271,11 @@ namespace RealVisionLab
             bitmap.UnlockBits(bitmapData);
 
             pb_scene.Image = bitmap;
-            }
+        }
 
-    // Pencere İle İlgili Olaylar Başlangıç ---------------------------------------------------------------------
+        // Pencere İle İlgili Olaylar Başlangıç ---------------------------------------------------------------------
 
-    bool Moved; int Mouse_X, Mouse_Y;
+        bool Moved; int Mouse_X, Mouse_Y;
         private void Move_MouseDown(object sender, MouseEventArgs e) { Mouse_X = e.X; Mouse_Y = e.Y; Moved = true; }
         private void Move_MouseMove(object sender, MouseEventArgs e) { if (Moved) SetDesktopLocation(MousePosition.X - Mouse_X, MousePosition.Y - Mouse_Y); }
         private void Move_MouseUp(object sender, MouseEventArgs e) { Moved = false; }
@@ -2287,6 +2295,7 @@ namespace RealVisionLab
                     cam[i].WaitForStop();
                 }
             }
+            SaveAllCameraSettingsToXml();
         }
         private void pb_RealTekno_Click(object sender, EventArgs e) { buton = true; }
         private void Reset_setting_Click(object sender, EventArgs e)
@@ -2413,19 +2422,19 @@ namespace RealVisionLab
             if (e.KeyCode == Keys.Enter)
             {
                 qrExtern = true;
-                    PasswordForm pasw = new PasswordForm
+                PasswordForm pasw = new PasswordForm
+                {
+                    Owner = this
+                };
+                pasw.FormClosed += (s, args) =>
+                {
+                    if (pasw.isTrue)
                     {
-                        Owner = this
-                    };
-                    pasw.FormClosed += (s, args) =>
-                    {
-                        if (pasw.isTrue)
-                        {
-                            qrExtern = false;
-                            Reset();
-                        }
-                    };
-                    pasw.Show();
+                        qrExtern = false;
+                        Reset();
+                    }
+                };
+                pasw.Show();
             }
         }
 
@@ -2449,6 +2458,191 @@ namespace RealVisionLab
 
 
         // Pencere İle İlgili Olaylar Bitiş --------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void ApplyCameraSettingsToAll()
+        {
+            DsDevice[] devices = DsDevice.GetDevicesOfCat(DirectShowLib.FilterCategory.VideoInputDevice);
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CameraSettings.xml");
+
+            if (!File.Exists(filePath))
+            {
+                //MessageBox.Show("XML dosyası bulunamadı. Ayarlar yüklenemedi.", "Dosya Eksik", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var xmlDocument = XDocument.Load(filePath);
+
+            for (int i = 0; i < devices.Length; i++)
+            {
+                var cameraElement = xmlDocument.Root.Element($"Camera_{i}");
+                if (cameraElement == null) continue;
+
+                IBaseFilter videoInputFilter = null;
+
+                try
+                {
+                    IFilterGraph2 graphBuilder = (IFilterGraph2)new FilterGraph();
+                    graphBuilder.AddSourceFilterForMoniker(devices[i].Mon, null, devices[i].Name, out videoInputFilter);
+
+                    var cameraControl = videoInputFilter as IAMCameraControl;
+                    var videoProcAmp = videoInputFilter as IAMVideoProcAmp;
+
+                    // Kamera Kontrol Ayarları
+                    var cameraControlElement = cameraElement.Element("CameraControlProperties");
+                    if (cameraControl != null && cameraControlElement != null)
+                    {
+                        foreach (var propertyElement in cameraControlElement.Elements())
+                        {
+                            if (Enum.TryParse(propertyElement.Name.ToString(), out DirectShowLib.CameraControlProperty property))
+                            {
+                                int value = int.Parse(propertyElement.Attribute("Value").Value);
+                                var flag = (DirectShowLib.CameraControlFlags)Enum.Parse(typeof(DirectShowLib.CameraControlFlags), propertyElement.Attribute("Flags").Value);
+                                cameraControl.Set(property, value, flag);
+                            }
+                        }
+                    }
+
+                    // Video İşlem Ayarları
+                    var videoProcAmpElement = cameraElement.Element("VideoProcAmpProperties");
+                    if (videoProcAmp != null && videoProcAmpElement != null)
+                    {
+                        foreach (var propertyElement in videoProcAmpElement.Elements())
+                        {
+                            if (Enum.TryParse(propertyElement.Name.ToString(), out VideoProcAmpProperty property))
+                            {
+                                int value = int.Parse(propertyElement.Attribute("Value").Value);
+                                var flag = (VideoProcAmpFlags)Enum.Parse(typeof(VideoProcAmpFlags), propertyElement.Attribute("Flags").Value);
+                                videoProcAmp.Set(property, value, flag);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show($"Kamera {i} ayarları yüklenirken hata oluştu: {ex.Message}");
+                }
+                finally
+                {
+                    if (videoInputFilter != null)
+                    {
+                        Marshal.ReleaseComObject(videoInputFilter);
+                    }
+                }
+            }
+
+            //MessageBox.Show("Tüm kameraların ayarları XML'den yüklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+
+        private void SaveAllCameraSettingsToXml()
+        {
+            DsDevice[] devices = DsDevice.GetDevicesOfCat(DirectShowLib.FilterCategory.VideoInputDevice);
+            var xmlDocument = new XDocument(new XElement("CameraSettings"));
+
+            for (int i = 0; i < devices.Length; i++)
+            {
+                IBaseFilter videoInputFilter = null;
+
+                try
+                {
+                    IFilterGraph2 graphBuilder = (IFilterGraph2)new FilterGraph();
+                    graphBuilder.AddSourceFilterForMoniker(devices[i].Mon, null, devices[i].Name, out videoInputFilter);
+
+                    var cameraControl = videoInputFilter as IAMCameraControl;
+                    var videoProcAmp = videoInputFilter as IAMVideoProcAmp;
+
+                    var cameraElement = new XElement($"Camera_{i}", new XAttribute("Name", devices[i].Name));
+
+                    // Kamera Kontrol Ayarları
+                    if (cameraControl != null)
+                    {
+                        var cameraControlElement = new XElement("CameraControlProperties");
+                        foreach (DirectShowLib.CameraControlProperty property in Enum.GetValues(typeof(DirectShowLib.CameraControlProperty)))
+                        {
+                            int value;
+                            DirectShowLib.CameraControlFlags flag;
+                            if (cameraControl.Get(property, out value, out flag) == 0)
+                            {
+                                cameraControlElement.Add(new XElement(property.ToString(),
+                                    new XAttribute("Value", value),
+                                    new XAttribute("Flags", flag)));
+                            }
+                        }
+                        cameraElement.Add(cameraControlElement);
+                    }
+
+                    // Video İşlem Ayarları
+                    if (videoProcAmp != null)
+                    {
+                        var videoProcAmpElement = new XElement("VideoProcAmpProperties");
+                        foreach (VideoProcAmpProperty property in Enum.GetValues(typeof(VideoProcAmpProperty)))
+                        {
+                            int value;
+                            VideoProcAmpFlags flag;
+                            if (videoProcAmp.Get(property, out value, out flag) == 0)
+                            {
+                                videoProcAmpElement.Add(new XElement(property.ToString(),
+                                    new XAttribute("Value", value),
+                                    new XAttribute("Flags", flag)));
+                            }
+                        }
+                        cameraElement.Add(videoProcAmpElement);
+                    }
+
+                    xmlDocument.Root.Add(cameraElement);
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show($"Kamera {i} ayarları kaydedilirken hata oluştu: {ex.Message}");
+                }
+                finally
+                {
+                    if (videoInputFilter != null)
+                    {
+                        Marshal.ReleaseComObject(videoInputFilter);
+                    }
+                }
+            }
+
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CameraSettings.xml");
+            xmlDocument.Save(filePath);
+            //MessageBox.Show("Tüm kameraların ayarları XML'e kaydedildi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 }

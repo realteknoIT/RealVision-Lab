@@ -7,7 +7,9 @@ using System.Drawing.Printing;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
+
 
 namespace RealVisionLab
 {
@@ -513,6 +515,14 @@ namespace RealVisionLab
             Program.mainPage.visibility_set(tabControl.SelectedIndex);
             MainPage.caming_id = tabControl.SelectedIndex;
         }
+
+
+
+
+
+
+
+
         private void Cam_settings(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -544,13 +554,14 @@ namespace RealVisionLab
         {
             string settings = "";
             int Iris, Focus, pan, tilt, roll, zoom, exposure;
-            videoSource.GetCameraProperty(CameraControlProperty.Iris, out Iris, out CameraControlFlags flags);
-            videoSource.GetCameraProperty(CameraControlProperty.Focus, out Focus, out CameraControlFlags flags1);
-            videoSource.GetCameraProperty(CameraControlProperty.Pan, out pan, out CameraControlFlags flags2);
-            videoSource.GetCameraProperty(CameraControlProperty.Tilt, out tilt, out CameraControlFlags flags3);
-            videoSource.GetCameraProperty(CameraControlProperty.Roll, out roll, out CameraControlFlags flags4);
-            videoSource.GetCameraProperty(CameraControlProperty.Zoom, out zoom, out CameraControlFlags flags5);
-            videoSource.GetCameraProperty(CameraControlProperty.Exposure, out exposure, out CameraControlFlags flags6);
+
+            videoSource.GetCameraProperty(CameraControlProperty.Iris, out Iris, out AForge.Video.DirectShow.CameraControlFlags flags);
+            videoSource.GetCameraProperty(CameraControlProperty.Focus, out Focus, out AForge.Video.DirectShow.CameraControlFlags flags1);
+            videoSource.GetCameraProperty(CameraControlProperty.Pan, out pan, out AForge.Video.DirectShow.CameraControlFlags flags2);
+            videoSource.GetCameraProperty(CameraControlProperty.Tilt, out tilt, out AForge.Video.DirectShow.CameraControlFlags flags3);
+            videoSource.GetCameraProperty(CameraControlProperty.Roll, out roll, out AForge.Video.DirectShow.CameraControlFlags flags4);
+            videoSource.GetCameraProperty(CameraControlProperty.Zoom, out zoom, out AForge.Video.DirectShow.CameraControlFlags flags5);
+            videoSource.GetCameraProperty(CameraControlProperty.Exposure, out exposure, out AForge.Video.DirectShow.CameraControlFlags flags6);
             settings += $"{Iris}*";
             settings += $"{Focus}*";
             settings += $"{pan}*";
@@ -571,7 +582,7 @@ namespace RealVisionLab
             int roll = int.Parse(camsettingsstring[i].Split('*')[4]);
             int zoom = int.Parse(camsettingsstring[i].Split('*')[5]);
             int exposure = int.Parse(camsettingsstring[i].Split('*')[6]);
-            CameraControlFlags flags = CameraControlFlags.Manual;
+            AForge.Video.DirectShow.CameraControlFlags flags = AForge.Video.DirectShow.CameraControlFlags.Manual;
             videoSource.SetCameraProperty(CameraControlProperty.Iris, iris, flags);
             videoSource.SetCameraProperty(CameraControlProperty.Focus, focus, flags);
             videoSource.SetCameraProperty(CameraControlProperty.Pan, pan, flags);
@@ -580,6 +591,14 @@ namespace RealVisionLab
             videoSource.SetCameraProperty(CameraControlProperty.Zoom, zoom, flags);
             videoSource.SetCameraProperty(CameraControlProperty.Exposure, exposure, flags);
         }
+ 
+        
+        
+        
+        
+        
+        
+        
         private void Cam_cmboxAdjust()
         {
             for (int i = 0; i < tab.Length; i++)
@@ -1424,6 +1443,10 @@ namespace RealVisionLab
                 MainPage.renk = 0;
                 btn_colorChange.BackColor = Color.Black;
             }
+        }
+
+        private void Property_FormClosing(object sender, FormClosingEventArgs e)
+        {
         }
 
         bool push = false;

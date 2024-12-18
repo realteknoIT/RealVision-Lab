@@ -103,14 +103,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealVisionLab.exe" size="2895872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DirectShowLib.dll" size="294912">
+      <assemblyIdentity name="DirectShowLib" version="2.1.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>a+Vjg86DmC9piMcAAVr6PVBkG6abSNDwKTKiJgIq/FY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RealVisionLab.exe" size="2899968">
       <assemblyIdentity name="RealVisionLab" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4Ve8ZwqQEF79Ox/iJlihgOp0S7Uf/POM5c6fC8kt4RU=</dsig:DigestValue>
+        <dsig:DigestValue>/E9ZBBy8ZvrQNI3n9iEKYSWxqnMo48j0hdSGE83IMjg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
