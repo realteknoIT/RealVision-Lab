@@ -661,37 +661,43 @@ namespace RealVisionLab
         {
             try
             {
-                if (capture && sender == cam[caming_id])
+                if(takePhoto == null)
                 {
-                    // Eski nesneleri serbest bırak
-                    if (pb_scene.Image != null)
+                    if(capture && sender == cam[caming_id])
                     {
-                        pb_scene.Image.Dispose();
-                    }
-
-                    if (newFrame != null)
-                    {
-                        newFrame.Dispose();
-                        newFrame = null;
-                    }
-
-                    // Yeni Bitmap nesnesini oluştur
-                    using (Bitmap tempFrame = (Bitmap)e.Frame.Clone())
-                    {
-                        newFrame = new Bitmap(tempFrame);
-
-                        if (gThrs)
+                        // Eski nesneleri serbest bırak
+                        if(pb_scene.Image != null)
                         {
-                            // Threshold uygulaması
-                            Threshold_Apply(newFrame, gthresint, renk);
+                            pb_scene.Image.Dispose();
                         }
-                        else
-                        {
-                            pb_scene.Image = (Bitmap)newFrame.Clone(); // Kopyalama yaparak referans sorunlarını önleyin
-                        }
-                    }
 
-                    capture = false;
+                        if(newFrame != null)
+                        {
+                            newFrame.Dispose();
+                            newFrame = null;
+                        }
+
+                        // Yeni Bitmap nesnesini oluştur
+                        using(Bitmap tempFrame = (Bitmap)e.Frame.Clone())
+                        {
+                            newFrame = new Bitmap(tempFrame);
+
+                            if(gThrs)
+                            {
+                                // Threshold uygulaması
+                                Threshold_Apply(newFrame, gthresint, renk);
+                            }
+                            else
+                            {
+                                pb_scene.Image = (Bitmap)newFrame.Clone(); // Kopyalama yaparak referans sorunlarını önleyin
+                            }
+                        }
+
+                        capture = false;
+                    }
+                } else
+                {
+                    pb_scene.Image = takePhoto;
                 }
             }
             catch (Exception ex)
@@ -1769,8 +1775,61 @@ namespace RealVisionLab
                 tx_debug.Text = exception.ToString();
             }
         }
-        //11-
-        private void Audi_alttan_uzat(Bitmap bitmap, int r_n, int c_n)
+        Bitmap takePhoto;
+		private void Photo_Click(object sender, EventArgs e)
+		{
+			if(pb_scene.Image != null)
+			{
+				SaveFileDialog saveFileDialog = new SaveFileDialog
+				{
+					Filter = "PNG Dosyaları|*.png",
+					Title = "Görseli Kaydet",
+					FileName = "image.png"
+				};
+
+				if(saveFileDialog.ShowDialog() == DialogResult.OK)
+				{
+					pb_scene.Image.Save(saveFileDialog.FileName, ImageFormat.Png);
+					MessageBox.Show("Görsel başarıyla kaydedildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    takePhoto = new Bitmap(saveFileDialog.FileName);
+				}
+			}
+			else
+			{
+				MessageBox.Show("PictureBox içinde bir görsel bulunmuyor!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+			}
+		}
+
+		private void sec_Click(object sender, EventArgs e)
+		{
+			OpenFileDialog openFileDialog = new OpenFileDialog
+			{
+				Filter = "PNG Dosyaları|*.png",
+				Title = "Bir PNG Dosyası Seç"
+			};
+
+			if(openFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				try
+				{
+					// Seçilen görseli Bitmap olarak yükleme
+					takePhoto = new Bitmap(openFileDialog.FileName);
+					MessageBox.Show("Görsel başarıyla yüklendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				catch(Exception ex)
+				{
+					MessageBox.Show($"Görsel yüklenirken bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
+
+		private void iptal_Click(object sender, EventArgs e)
+		{
+            takePhoto = null;
+		}
+
+		//11-
+		private void Audi_alttan_uzat(Bitmap bitmap, int r_n, int c_n)
         {
             try
             {
