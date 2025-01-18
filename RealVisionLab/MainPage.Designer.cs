@@ -54,6 +54,7 @@ namespace RealVisionLab
 			this.Photo = new System.Windows.Forms.Button();
 			this.sec = new System.Windows.Forms.Button();
 			this.iptal = new System.Windows.Forms.Button();
+			this.RotUzunluk = new System.Windows.Forms.Label();
 			this.panel2.SuspendLayout();
 			this.p_scene.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pb_scene)).BeginInit();
@@ -249,7 +250,7 @@ namespace RealVisionLab
 			this.txt_qr.ForeColor = System.Drawing.SystemColors.ControlDark;
 			this.txt_qr.Location = new System.Drawing.Point(8, 962);
 			this.txt_qr.Name = "txt_qr";
-			this.txt_qr.Size = new System.Drawing.Size(628, 13);
+			this.txt_qr.Size = new System.Drawing.Size(364, 13);
 			this.txt_qr.TabIndex = 26;
 			this.txt_qr.Text = "QR:";
 			// 
@@ -266,9 +267,9 @@ namespace RealVisionLab
 			// txt_qr2
 			// 
 			this.txt_qr2.ForeColor = System.Drawing.SystemColors.ControlDark;
-			this.txt_qr2.Location = new System.Drawing.Point(768, 962);
+			this.txt_qr2.Location = new System.Drawing.Point(798, 962);
 			this.txt_qr2.Name = "txt_qr2";
-			this.txt_qr2.Size = new System.Drawing.Size(500, 13);
+			this.txt_qr2.Size = new System.Drawing.Size(470, 10);
 			this.txt_qr2.TabIndex = 501;
 			this.txt_qr2.Text = "QR:";
 			// 
@@ -302,11 +303,22 @@ namespace RealVisionLab
 			this.iptal.UseVisualStyleBackColor = true;
 			this.iptal.Click += new System.EventHandler(this.iptal_Click);
 			// 
+			// RotUzunluk
+			// 
+			this.RotUzunluk.AutoSize = true;
+			this.RotUzunluk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+			this.RotUzunluk.Location = new System.Drawing.Point(545, 970);
+			this.RotUzunluk.Name = "RotUzunluk";
+			this.RotUzunluk.Size = new System.Drawing.Size(187, 16);
+			this.RotUzunluk.TabIndex = 505;
+			this.RotUzunluk.Text = "SolKol : 100 - SağKol : 101";
+			// 
 			// MainPage
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1280, 1024);
+			this.Controls.Add(this.RotUzunluk);
 			this.Controls.Add(this.iptal);
 			this.Controls.Add(this.sec);
 			this.Controls.Add(this.Photo);
@@ -365,6 +377,7 @@ namespace RealVisionLab
 		private System.Windows.Forms.Button Photo;
 		private System.Windows.Forms.Button sec;
 		private System.Windows.Forms.Button iptal;
+		private System.Windows.Forms.Label RotUzunluk;
 	}
 }
 

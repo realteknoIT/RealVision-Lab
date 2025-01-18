@@ -1449,7 +1449,8 @@ namespace RealVisionLab
         {
         }
 
-        bool push = false;
+
+		bool push = false;
         private void btn_foto_Click(object sender, EventArgs e)
         {
             push = !push;
